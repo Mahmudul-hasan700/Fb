@@ -11,11 +11,9 @@ function showLoadingAnimation() {
 function showDownloadButtons() {
   const loaderWrapper = document.getElementById("loader-wrapper");
   const downloadButtonsContainer = document.getElementById("downloadLinks");
-  const downloadAnotherButton = document.getElementById("downloadAnotherButton");
 
   loaderWrapper.style.display = "none";
   downloadButtonsContainer.style.display = "block";
-  downloadAnotherButton.style.display = "block";
 }
 
 // Function to trigger the download
