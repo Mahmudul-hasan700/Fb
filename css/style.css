@@ -1,0 +1,297 @@
+    @import url(https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap);
+
+    body {
+      font-family: 'Inter', sens-sarif;
+    }
+
+    .navbar-brand {
+      font-family: Fredoka One;
+      font-size: 22px;
+      font-weight: 900;
+    }
+
+    .input-container {
+      width: 100%;
+      height: 100px;
+      margin: 20px 0;
+      position: relative;
+    }
+
+    .button {
+      background-color: #2178bf;
+      color: #fff;
+      border: 3px solid #2178bf;
+      padding: 16px 12px;
+      border-radius: 0 4px 4px 0;
+    }
+
+    .button:hover {
+      opacity: 0.8;
+    }
+
+    .input {
+      border: 3px solid #2178bf;
+      padding: 16px 10px;
+      max-width: 100%;
+      border-radius: 4px 0 0 4px;
+      font-weight: 500;
+    }
+
+    .logo {
+      height: 30px;
+      border-radius: 15px;
+    }
+
+    .navbar-nav {
+      float: left;
+    }
+
+    .navbar-toggler {
+      border: 1px solid;
+    }
+
+    .paste-div {
+      position: absolute;
+      color: black;
+    }
+
+    .error-message {
+      text-align: center;
+      background-color: #ffdd57;
+      color: #000;
+      margin: 5px 20px;
+      padding: 10px 0;
+      border-radius: 5px;
+    }
+
+    .container {
+      max-width: 100%;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+
+    .share-button {
+      background-color: #2178bf;
+      display: inline;
+      color: #fff;
+      padding: 8px 12px;
+      border-radius: 50%;
+      position: fixed;
+      bottom: 50px;
+      right: 40px;
+      z-index: 200;
+    }
+
+    .footer {
+      text-align: center;
+    }
+
+    .footer a {
+      text-decoration: none;
+      font-size: 18px;
+      font-family: 'Inter', Roboto;
+      font-weight: 500;
+      color: #2178bf;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    /* Style for FAQ section */
+    .faq {
+      margin-top: 20px;
+    }
+
+    .question {
+      margin-bottom: 15px;
+      cursor: pointer;
+    }
+
+    .toggle {
+      font-weight: bold;
+      color: #2178bf;
+    }
+
+    .answer {
+      margin-top: 5px;
+      padding-left: 20px;
+      border-left: 2px solid #2178bf;
+    }
+
+    .active {
+      border: none;
+      background-color: white;
+    }
+
+    @media (min-width:860px) {
+      .form {
+        display: flex;
+        justify-content: center;
+      }
+
+      ::placeholder {
+        padding: 0 10px;
+      }
+
+      .input-container {
+        display: flex;
+        padding: 16px 10px;
+        width: 85%;
+        border-radius: 4px 0 0 4px;
+        font-weight: 500;
+      }
+
+      .full-site {
+        margin: 0 50px;
+        width: 90%;
+        font-size: 1.3rem;
+        line-height: 2;
+      }
+
+      .btn-paste {
+        position: absolute;
+        border-radius: 5px;
+        background-color: white;
+        border: none;
+        color: black;
+        font-size: 1.5rem;
+      }
+
+      .paste-div {
+        top: 25px;
+        right: 178px;
+      }
+
+      .input {
+        width: 85%;
+        padding: 16px 43px 16px 10px;
+      }
+
+      .button {
+        padding: 16px;
+      }
+
+      .active {
+        border: none;
+        background-color: white;
+      }
+
+      .error-message {
+        margin: 30px 30px;
+      }
+    }
+
+    @media (max-width:768px) {
+      .form {
+        flex-direction: column;
+        margin-top: 0;
+      }
+
+      .input {
+        width: 100%;
+        border-radius: 5px;
+        padding: 12px 10px;
+      }
+
+      .button {
+        width: 100%;
+        border-radius: 5px;
+        margin-top: 10px;
+        padding: 12px;
+        font-weight: 900;
+        letter-spacing: 1.5px;
+      }
+
+      .error-message {
+        margin: 30px 0;
+      }
+
+      .btn-paste {
+        font-size: 1.3rem;
+
+      }
+
+      .paste-div {
+        right: 4px;
+        top: 4.5px;
+        padding: 0;
+        background-color: white;
+      }
+    }
+
+    .loader-container {
+      position: relative;
+    }
+
+    .download-hd {
+      border: none;
+      width: 100%;
+      padding: 8px;
+      background-color: rgba(0, 99, 249, 255);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      font-family: Inter;
+      font-weight: 500;
+      margin: 10px 0;
+      border-radius: 3px;
+      text-align: center;
+      color: #fff;
+      font-size: 15px;
+      position: relative;
+    }
+
+    .download-sd {
+      border: none;
+      padding: 8px;
+      width: 100%;
+      background-color: rgba(0, 190, 100, 1);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      font-family: 'Inter', sens-sarif;
+      font-weight: 500;
+      margin: 0;
+      border-radius: 3px;
+      color: #fff;
+      font-size: 15px;
+    }
+
+    .another {
+      background-color: #0a0a0a;
+      width: 100%;
+      font-family: Inter;
+      font-weight: 500;
+      margin: 10px 0;
+      border-radius: 3px;
+      color: #fff;
+      font-size: 15px;
+      padding: 8px;
+      border: none;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+
+
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      margin: 10px;
+    }
+
+    .navbar-nav .nav-item {
+      margin-right: 15px;
+    }
+
+    .nav-item {
+      margin: 5px 0;
+    }
+
+    .nav-item {
+      display: inline-block;
+    }
+
+    .navbar-nav .nav-link {
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    #navbarnav {
+      display: flex;
+    }
