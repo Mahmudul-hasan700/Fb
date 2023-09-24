@@ -189,8 +189,7 @@
     <div class="container">
       <!-- Logo on the Left Side -->
       <a class="navbar-brand" href="./">
-        <img src="logo.png" width="30" height="30"
-          class="d-inline-block align-top" alt=" Facebook downloader">
+        <img src="logo.png" width="30" height="30" class="d-inline-block align-top" alt=" Facebook downloader">
         <span>FDown</span>
       </a>
 
@@ -203,19 +202,27 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="#">Home</a>
+            <a class="nav-link" href="/tiktok-downloader">Tiktok Downloader</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Privacy policy</a>
+            <a class="nav-link" href="/instagram-downloader">Instagram Downloader</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Terms of use</a>
+            <a class="nav-link" href="/youtube-downloader">Youtube Downloader</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
-          </li>
+          <!-- Inside your navbar -->
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="languageDropdown"
+              data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Language
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+              <li><a class="dropdown-item" href="https://fdown.netlify.app/en" hreflang="en">English</a></li>
+              <li><a class="dropdown-item" href="https://fdown.netlify.app/vi" hreflang="vi">Vietnamese</a></li>
+              <li><a class="dropdown-item" href="https://fdown.netlify.app/ar" hreflang="ar">Arabic</a></li>
+            </ul>
+          </div>
         </ul>
-
       </div>
     </div>
   </nav>
@@ -424,13 +431,13 @@
 
   <hr class="my-5">
   <div class="container footer">
-    <a href="#"> Terms & use</a>
+    <a href="/terms-of-use"> Terms & use</a>
     |
-    <a href="#"> Privacy policy</a>
+    <a href="/privacy-policy"> Privacy policy</a>
     |
-    <a href="#"> Privacy policy</a>
+    <a href="/contact"> Contact</a>
 
-    <p class="text-center">@2020 eissaweb.com</p>
+    <p class="text-center">@2020 fdown.netlify.app</p>
   </div>
   <script type="6d533cca5d6b6877ccf21b19-text/javascript">
 
@@ -443,94 +450,13 @@
      data-full-width-responsive="true"></ins>';(adsbygoogle=window.adsbygoogle||[]).push({})}var modal=document.getElementById("dlModal"),btnClose=document.getElementById("closeModalBtn");btnClose.onclick=function(){modal.style.display="none";document.getElementsByTagName("BODY")[0].classList.remove("modal-open")};window.onclick=function(n){n.target==modal&&(modal.style.display="none",document.getElementsByTagName("BODY")[0].classList.remove("modal-open"))}
 
   </script>
-
-
-  <script type="6d533cca5d6b6877ccf21b19-module">
-
-
-
-                export const pwaTrackingListeners = () => {
-
-                  const fireAddToHomeScreenImpression = event => {
-
-                        sendEvent('PWA_Add_to_homescreen_shown');
-
-                        event.userChoice.then(choiceResult => {
-
-                          sendEvent(`PWA_User_clicked_${choiceResult}`);
-
-                        });
-
-                        window.removeEventListener(
-
-                          "beforeinstallprompt",
-
-                          fireAddToHomeScreenImpression
-
-                        );
-
-                  };
-
-                  window.addEventListener("beforeinstallprompt", fireAddToHomeScreenImpression);
-
-                  window.addEventListener("appinstalled", event => {
-
-                        sendEvent("PWA_app_installed_by_user");
-
-                        console.log('PWA app installed by user!!! Hurray');
-
-                  });
-
-                  window.addEventListener("load", () => {
-
-                        let trackText;
-
-                        if (navigator && navigator.standalone) {
-
-                          trackText = "Launched_Installed_iOS";
-
-                        } else if (matchMedia("(display-mode: standalone)").matches) {
-
-                          trackText = "Launched_Installed";
-
-                        } else {
-
-                          trackText = "Launched_Browser_Tab";
-
-                        }
-
-                        sendEvent(track);
-
-                  });
-
-                };
-
-  </script>
-
   <script type="6d533cca5d6b6877ccf21b19-text/javascript">
 
   var ua=navigator.userAgent.toLowerCase(),isAndroid=ua.indexOf("android")>-1,isIOS=/iPad|iPhone|iPod/.test(navigator.userAgent)&&!window.MSStream;isAndroid?document.getElementById("share_app").style.display="flex":isIOS&&(document.getElementById("share_app").style.display="flex")
 
   </script>
 
-  <script type="6d533cca5d6b6877ccf21b19-text/javascript">
-
-  const shareButtonMenu=document.querySelector(".share-button");shareButtonMenu.addEventListener("click",()=>{navigator.share?navigator.share({title:"Share FDownloader",url:"https://fdownloader.net/en"}).then(()=>{console.log("Thanks for sharing!")}).catch(console.error):console.log("Share_webapi_not_support"),console.log("share_click_btnShare")})
-
-  </script>
-
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125325035-1"
-    type="6d533cca5d6b6877ccf21b19-text/javascript"></script>
-
-  <script type="6d533cca5d6b6877ccf21b19-text/javascript">
-
-  function gtag(){dataLayer.push(arguments)}function sendEvent(n,t=""){""==t?ga("send","event","home",n):ga("send","event","home",n,t)}window.dataLayer=window.dataLayer||[];gtag("js",new Date);gtag("config","UA-125325035-1")
-
-  </script>
-
-  <script type="application/ld+json">
-
-  {"@context":"https://schema.org","@type":"WebPage","name":"FDownloader - Download Video Facebook HD 1080p, 4k for free","description":"FDownloader is a Facebook video downloader, allow to download Facebook videos with the best quality HD 1080p, 4K for free without installing software.","alternateName":"FDownloader - Download Video Facebook HD 1080p, 4k for free","url":"https://fdown.netlify.app/en"}
+  <script type="application/ld+json"> {"@context":"https://schema.org","@type":"WebPage","name":"FDownloader - Download Video Facebook HD 1080p, 4k for free","description":"FDownloader is a Facebook video downloader, allow to download Facebook videos with the best quality HD 1080p, 4K for free without installing software.","alternateName":"FDownloader - Download Video Facebook HD 1080p, 4k for free","url":"https://fdown.netlify.app/en"}
 
   </script>
 
