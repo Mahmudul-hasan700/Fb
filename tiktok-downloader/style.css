@@ -1,0 +1,347 @@
+@import url(https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap);
+
+body {
+  font-family: 'Inter', Roboto;
+
+}
+
+.navbar-brand {
+  font-family: Fredoka One;
+  font-size: 22px;
+  font-weight: 900;
+}
+
+.input-container {
+  width: 100%;
+  height: 100px;
+  margin: 20px 0;
+  position: relative;
+}
+
+.button {
+  background-color: #2178bf;
+  color: #fff;
+  border: 3px solid #2178bf;
+  padding: 16px 12px;
+  border-radius: 0 4px 4px 0;
+}
+
+.button:hover {
+  opacity: 0.8;
+}
+
+.input {
+  border: 3px solid #2178bf;
+  padding: 16px 10px;
+  max-width: 100%;
+  border-radius: 4px 0 0 4px;
+  font-weight: 500;
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  position: relative;
+}
+
+.logo {
+  height: 30px;
+  border-radius: 15px;
+}
+
+.navbar-nav {
+  float: left;
+}
+
+.navbar-toggler {
+  border: 1px solid;
+}
+
+.paste-div {
+  position: absolute;
+}
+
+.error-message {
+  text-align: center;
+  max-width: 100%;
+  background-color: #ff5a57;
+  border-radius: 4px;
+  padding: 13px 0;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.container {
+  max-width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.share-button {
+  background-color: #2178bf;
+  display: inline;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 30px;
+  right: 20px;
+  z-index: 200;
+}
+
+.share {
+  background-color: #2178bf;
+  display: inline;
+  position: fixed;
+  bottom: 30px;
+  right: 20px;
+  z-index: 200;
+}
+
+
+.footer {
+  text-align: center;
+}
+
+.footer a {
+  text-decoration: none;
+  font-size: 18px;
+  font-family: 'Inter', Roboto;
+  font-weight: 500;
+  color: #2178bf;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Style for FAQ section */
+.faq {
+  margin-top: 20px;
+}
+
+.question {
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+.toggle {
+  font-weight: bold;
+  color: #2178bf;
+}
+
+.answer {
+  margin-top: 5px;
+  padding-left: 20px;
+  border-left: 2px solid #2178bf;
+}
+
+.active {
+  border: none;
+  background-color: white;
+}
+
+@media (min-width:860px) {
+  .btn-paste {
+    position: absolute;
+    border-radius: 5px;
+    background-color: white;
+    border: none;
+  }
+
+  .paste-div {
+    top: 12px;
+    right: 285px;
+    background-color: black;
+  }
+
+  .input {
+    width: 60%;
+  }
+
+  .error-message {
+    margin: 30px 30px;
+  }
+
+  .result {
+    margin: 100px 15px;
+  }
+
+  .thumbnail-container {
+    width: 100px;
+  }
+}
+
+@media (max-width:768px) {
+  .form {
+    flex-direction: column;
+    margin-top: 0;
+  }
+
+  .input {
+    width: 100%;
+    border-radius: 5px;
+    padding: 12px 10px;
+  }
+
+  .button {
+    width: 100%;
+    border-radius: 5px;
+    margin-top: 10px;
+    padding: 12px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+  }
+
+  .error-message {
+    margin: 30px 0;
+
+  }
+
+  .paste-div {
+    right: 3px;
+    top: 5px;
+    padding: 3px;
+    background-color: white;
+  }
+
+  .result {
+    margin: 150px 0;
+  }
+
+  .without-watermark,
+  .download_music {
+    width: 100%;
+  }
+
+
+}
+
+#video_container {
+  display: flex;
+  border-radius: 10px;
+  max-width: 100%;
+  margin: 10px 0;
+  background-color: #e8e8f0;
+}
+
+.thumbnail-container {
+  border-radius: 10px;
+  max-width: 150px;
+  height: 80px;
+  margin: 5px;
+  justify-content: center;
+  overflow: hidden;
+  border: 1px solid #c1ded4;
+}
+
+.thumbnail {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  scale: 2;
+  margin: 0;
+  padding: 0;
+}
+
+.text-box {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  min-width: 300px;
+}
+
+.text {
+  max-height: 3.3em;
+  overflow: hidden;
+  line-height: 1.2em;
+  margin: 0;
+  padding: 2px;
+  color: #15161c;
+  font-weight: 500;
+
+}
+
+#container {
+  min-width: 100%;
+}
+
+.without-watermark {
+  border: none;
+  padding: 8px;
+  background-color: rgba(0, 99, 249, 255);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  font-family: Inter;
+  font-weight: 500;
+  margin: 10px 0;
+  border-radius: 3px;
+  text-align: center;
+  color: #fff;
+  font-size: 15px;
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.without-watermark svg {
+  height: 40px;
+}
+
+.download_music {
+  border: none;
+  padding: 8px;
+  width: 100%;
+  background-color: rgba(0, 190, 100, 1);
+  /* Changed alpha value to 1 for full opacity */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* Adjusted box shadow */
+  font-family: 'Inter', sens-sarif;
+  font-weight: 500;
+  margin: 0;
+  border-radius: 3px;
+  color: #fff;
+  font-size: 15px;
+}
+
+.download_music svg {
+  display: none;
+}
+
+.without-watermark:hover {
+  background-color: #0b58ca;
+}
+
+.download_music:hover {
+  background-color: rgba(0, 160, 80, 1);
+}
+
+.another {
+  background-color: #0a0a0a;
+  width: 100%;
+  font-family: Inter;
+  font-weight: 500;
+  margin: 10px 0;
+  border-radius: 3px;
+  color: #fff;
+  font-size: 15px;
+  padding: 8px;
+  border: none;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}

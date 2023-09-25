@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TikTok video downloader</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+
+  <link rel="icon" type="image/png" sizes="192x192" href="../android-chrome-192x192.png">
+
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+
+  <link rel="manifest" href="https://fdown.netlify.app/icons/manifest.json">
+
+  <link rel="mask-icon" href="https://fdownloader.net/icons/safari-pinned-tab.svg" color="#00b887">
+
+  <link rel="shortcut icon" href="../icons/favicon.ico">
+
+  <meta name="msapplication-TileColor" content="#00b887">
+
+
+  <!-- Include Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <!-- Logo on the Left Side -->
+      <a class="navbar-brand" href="./">
+        <img src="../logo.png" width="30" height="30"
+          class="d-inline-block align-top" alt=" TikTok downloader">
+        <span>Fdown</span>
+      </a>
+
+      <!-- Menu Items on the Right Side -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Privacy policy</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Terms of use</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div id="card" class="container card bg-white " style="border:1px solid #bbb">
+    <h1 class="text-center my-5">Download & Save TikTok Video</h1>
+    <div class="loader-container">
+      <div class="input-container">
+        <form id="download-form" class="form" method="get" action="">
+          <input id="URL"name="url" type="text" class="input" placeholder="Paste TikTok link here" required="">
+          <div class="paste-div border-0">
+            <button type="button" class="btn btn-paste  close-button" onclick="pasteFromClipboard()">
+            </button>
+          </div>
+          <input type="submit" class="button" id="submit" value="Download">
+        </form>
+      </div>
+
+      <div id="loader-wrapper" class="hidden">
+
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+          style="margin:auto;display:block" width="100%" height="200px" viewbox="0 0 100 100"
+          preserveaspectratio="xMidYMid">
+
+          <g transform="translate(20 50)">
+
+            <circle cx="0" cy="0" r="6" fill="#00b887">
+
+              <animatetransform attributename="transform" type="scale" begin="-0.375s" calcmode="spline"
+                keysplines="0.3 0 0.7 1;0.3 0 0.7 1" values="0;1;0" keytimes="0;0.5;1" dur="1s"
+                repeatcount="indefinite"></animatetransform>
+            </circle>
+          </g>
+          <g transform="translate(40 50)">
+            <circle cx="0" cy="0" r="6" fill="#00b887">
+              <animatetransform attributename="transform" type="scale" begin="-0.25s" calcmode="spline"
+                keysplines="0.3 0 0.7 1;0.3 0 0.7 1" values="0;1;0" keytimes="0;0.5;1" dur="1s"
+                repeatcount="indefinite"></animatetransform>
+            </circle>
+          </g>
+          <g transform="translate(60 50)">
+            <circle cx="0" cy="0" r="6" fill="#00b887">
+              <animatetransform attributename="transform" type="scale" begin="-0.125s" calcmode="spline"
+                keysplines="0.3 0 0.7 1;0.3 0 0.7 1" values="0;1;0" keytimes="0;0.5;1" dur="1s"
+                repeatcount="indefinite"></animatetransform>
+            </circle>
+          </g>
+          <g transform="translate(80 50)">
+            <circle cx="0" cy="0" r="6" fill="#00b887">
+              <animatetransform attributename="transform" type="scale" begin="0s" calcmode="spline"
+                keysplines="0.3 0 0.7 1;0.3 0 0.7 1" values="0;1;0" keytimes="0;0.5;1" dur="1s"
+                repeatcount="indefinite">
+              </animatetransform>
+            </circle>
+          </g>
+          <text x="50%" y="70%" style="font-size:7px" alignment-baseline="middle" text-anchor="middle"
+            fill="#155724">please wait a few seconds!
+
+          </text>
+        </svg>
+
+      </div>
+
+
+      <div class="error-message hidden">
+        <span>Please enter a valid TikTok video link.</span>
+      </div>
+
+    </div>
+  </div>
+  </div>
+  </div>
+  <div class="result">
+    <div id="container" class="hidden container">
+      <div id="video_container" class="image-tag hidden">
+        <div class="thumbnail-container container">
+          <img id="video_thumbnail" src="" alt="Video Thumbnail" class="thumbnail">
+        </div>
+        <div id="video_source" class="text-box">
+          <p id="video_tag" class="text"></p>
+        </div>
+      </div>
+      <div class="buttons">
+        <button onclick="handleDownloadButtonClick(this)" key="video" id="video_download" class="without-watermark">
+          <div class="button-content flex flex-col justify-center items-center py-1">
+            <span class="font-semibold text-lg text-neutral-800"><i class="fas fa-video"></i> Download Without
+              Watermark</span>
+          </div>
+          <svg width="120" height="30" viewBox="0 0 120 30" class="dots hidden absolute left-0 right-0 mx-auto h-3/4"
+            id="loader" xmlns="http://www.w3.org/2000/svg" fill=" orange ">
+            <circle cx="15" cy="15" r="15">
+              <animate attributeName="r" from="15" to="15" begin="0s" dur="0.8s" values="15;9;15" calcMode="linear"
+                repeatCount="indefinite" />
+              <animate attributeName="fill-opacity" from="1" to="1" begin="0s" dur="0.8s" values="1;.5;1"
+                calcMode="linear" repeatCount="indefinite" />
+            </circle>
+            <circle cx="60" cy="15" r="9" fill-opacity="0.3">
+              <animate attributeName="r" from="9" to="9" begin="0s" dur="0.8s" values="9;15;9" calcMode="linear"
+                repeatCount="indefinite" />
+              <animate attributeName="fill-opacity" from="0.5" to="0.5" begin="0s" dur="0.8s" values=".5;1;.5"
+                calcMode="linear" repeatCount="indefinite" />
+            </circle>
+            <circle cx="105" cy="15" r="15">
+              <animate attributeName="r" from="15" to="15" begin="0s" dur="0.8s" values="15;9;15" calcMode="linear"
+                repeatCount="indefinite" />
+              <animate attributeName="fill-opacity" from="1" to="1" begin="0s" dur="0.8s" values="1;.5;1"
+                calcMode="linear" repeatCount="indefinite" />
+            </circle>
+          </svg>
+        </button>
+        <button onclick="handleDownloadButtonClick(this)" key="music" id="music_download" class="download_music">
+          <svg class="button-content" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 277.425 277.425"
+            style="enable-background:new 0 0 277.425 277.425;" xml:space="preserve">
+          </svg> 
+          <svg class="hidden animate-spin absolute left-0 right-0 mx-auto w-6 h-6" id="loader" viewbox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+            <path class="fill-neutral-800" d="M15 8c0 3.9-3.1 7-7 7s-7-3-7-7h-1c0 4 3.6 8 8 8s8-3.6 8-8h-1z">
+
+            </path>
+          </svg>
+          <span><i class="fas fa-music"></i> Download Music</span>
+        </button>
+        <a href="./"><button class="another">Download another video</button></a>
+      </div>
+      <div id="overlay_loader" class="overlay hidden bg-neutral-100 dark:bg-neutral-800">
+        <div class="overlay__inner">
+          <div class="overlay__content"><span
+              class="spinner dark:border-t-white dark:border-neutral-700 border-neutral-200 border-t-neutral-900"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="body-item" class="container body-item my-5">
+    <h2>Free online TikTok video downloader</h2>
+
+    <p>FDown is one of the best tools available online for convert videos from TikTok to mp4 (video) or mp3 (audio)
+      files and download them for free - this service works for computers, tablets and mobile devices. All you need to
+      do is to enter the URL in the text box provided and use the button labeled "Start ->" to download the video in the
+      available format. The usage of our website is free and does not required any software or registration. Have fun
+      and enjoy the use of our website.</p>
+
+    <div class="column">
+
+      <div class="col-12 col-md-6">
+
+        <h4 class="">How to use TikTok video downloader ?</h4>
+
+        <ol>
+
+          <li>First get the TikTok video url and copy it</li>
+
+          <li>paste the list and hit start</li>
+
+          <li>Choose the format you Want, that's it :)</li>
+
+        </ol>
+
+      </div>
+
+      <div class="col-12 col-md-6">
+
+        <h4>TikTok Downloader Features:</h4>
+
+        <ul>
+          <li>It free to use :)</li>
+          <li>No registration required</li>
+          <li>Unlimited downloads</li>
+          <li>Choose Format you want</li>
+        </ul>
+
+      </div>
+
+    </div>
+
+    <h3>Where are TikTok videos saved after being downloaded?</h3>
+
+    <p>When you're downloading files, they are usually saved into whatever folder you have set as your default. Your
+      browser normally sets this folder for you. In browser settings you can change and choose manually the destination
+      folder for your downloded TikTok videos.</p>
+
+    <h3>Can I download Live TikTok videos?</h3>
+
+    <p>Once streaming is done, you can easily save live FB videos to your device using FDown TikTok video
+      Downloader.</p>
+
+    <h3>Does FDown store downloaded videos or keep a copy of videos?</h3>
+
+    <p>FDown doesn't store videos. Neither do we keep copies of downloaded videos. All videos are hosted on
+      TikTok's servers. Also, we don't keep track of the download histories of our users, thus making using FDown
+      totally anonymous.</p>
+
+
+    <div class="share">
+      <button class="btn share-button" type="button">
+        <i class="fas fa-share"></i>
+      </button>
+    </div>
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq">
+      <div class="question">
+        <span class="toggle">Q: What is this website for?</span>
+        <div class="answer hidden">
+          A: This website allows you to download and save TikTok videos for free.
+        </div>
+      </div>
+      <div class="question">
+        <span class="toggle">Q: How do I use this TikTok video downloader?</span>
+        <div class="answer hidden">
+          A: Follow these steps:
+          <ol>
+            <li>Copy the TikTok video URL.</li>
+            <li>Paste it into the input field.</li>
+            <li>Click the "Start" button to begin the download.</li>
+          </ol>
+        </div>
+      </div>
+      <!-- Add more questions and answers as needed -->
+    </div>
+  </div>
+
+  <!-- Footer -->
+
+
+  <hr class="my-5">
+  <div class="container footer">
+    <a href="terms.hy"> Terms & use</a>
+    |
+    <a href="privacy.html"> Privacy policy</a>
+    |
+    <a href="contact.html"> Privacy policy</a>
+
+    <p class="text-center">@2020 eissaweb.com</p>
+  </div>
+  <script>
+    // Get references to the input field and download button
+    const videoUrlInput = document.getElementById('videoUrl');
+    const downloadButton = document.getElementById('downloadButton');
+    const errorMessage = document.querySelector('.error-message');
+
+    // Function to check if a URL is a valid Facebook video link
+    function isValidFacebookVideoLink(url) {
+      return url.includes('vt.tiktok.com') || url.includes('tiktok.com');
+    }
+
+    // Add an event listener to the input field to check when it changes
+    videoUrlInput.addEventListener('input', () => {
+      const videoUrl = videoUrlInput.value;
+
+      // Check if the entered URL is a valid Facebook video link
+      if (isValidFacebookVideoLink(videoUrl)) {
+        // Enable the download button
+        downloadButton.disabled = false;
+        // Hide the error message
+        errorMessage.classList.add('hidden');
+      } else {
+        // Disable the download button
+        downloadButton.disabled = true;
+        // Show the error message
+        errorMessage.classList.remove('hidden');
+      }
+    });
+
+  </script>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="js/try.js">
+  </script>
+    <script src="jquery.js">
+
+    </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
