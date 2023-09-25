@@ -20,7 +20,7 @@ body {
 .button {
   display: flex;
   align-items: center;
-  justify-content: center; 
+  justify-content: center;
   background-color: #2178bf;
   color: #fff;
   border: 3px solid #2178bf;
@@ -156,9 +156,16 @@ body {
     border: none;
   }
 
+  .full-site {
+    margin: 0 50px;
+    width: 90%;
+    font-size: 1.3rem;
+    line-height: 2;
+  }
+
   .paste-div {
     top: 12px;
-    right: 285px;
+    right: 290px;
     background-color: black;
   }
 
