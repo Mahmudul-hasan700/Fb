@@ -183,7 +183,7 @@
 </head>
 
 <body>
-  
+
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
       <!-- Logo on the Left Side -->
@@ -199,7 +199,7 @@
       </button>
 
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
+        <ul class="navbar-nav">
           <li class="nav-item">
             <a class="nav-link" href="/tiktok-downloader">Tiktok Downloader</a>
           </li>
@@ -233,9 +233,9 @@
         <div class="input-container">
           <input class="input input-url" type="text" id="videoUrl" placeholder="Paste Facebook video URL" required>
           <div class="paste-div border-0">
-            <button type="button" class="btn btn-paste" onclick="toggleInput()">
-              <span><i class="fas fa-paste"></i></span>
+            <button type="button" class="btn btn-paste  close-button" onclick="pasteFromClipboard()">
             </button>
+          </button>
           </div>
           <button class="button" id="downloadButton">Download</button>
         </div>
@@ -493,21 +493,35 @@
       }
     });
 
-    // Function to toggle the input field for paste button
-    function toggleInput() {
-      videoUrlInput.select();
-      document.execCommand('paste');
-    }
-
-    // Add an event listener to the paste button
-    const pasteButton = document.querySelector('.btn-paste');
-    pasteButton.addEventListener('click', toggleInput);
   </script>
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="js/try.js">
   </script>
-  <script src="js/jquery.js">
+    <script>
+    // Get references to the input field and the paste button
+    const inputField = document.getElementById('videoUrl'); // Assuming your input field has the id 'params'
+    const pasteButton = document.querySelector('.close-button');
+
+    // Add an event listener to the input field for input changes
+    inputField.addEventListener('input', function () {
+      const inputValue = inputField.value;
+
+      // Check if the input value is empty
+      if (inputValue === '') {
+        // If empty, hide the close icon
+        pasteButton.innerHTML = '';
+      } else {
+        // If not empty, display the close icon
+        pasteButton.innerHTML = '<i class="fas fa-times"></i>';
+      }
+    });
+
+    // Function to clear the input field when the close icon is clicked
+    pasteButton.addEventListener('click', function () {
+      inputField.value = ''; // Clear the input field
+      pasteButton.innerHTML = ''; // Hide the close icon again
+    });
   </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>

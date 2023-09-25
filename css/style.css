@@ -44,6 +44,7 @@
 
     .navbar-nav {
       float: left;
+      width: 100%;
     }
 
     .navbar-toggler {
@@ -281,17 +282,17 @@
 
     .nav-item {
       margin: 5px 0;
+      width: 100%;
+      transition: 0.15s all ease;
     }
 
-    .nav-item {
-      display: inline-block;
+    .nav-links:hover,
+    .nav-item:hover {
+      background-color: rgb(230, 230, 230);
+      color: #fff !important;
     }
 
     .navbar-nav .nav-link {
       font-weight: bold;
       transition: color 0.3s;
-    }
-
-    #navbarnav {
-      display: flex;
     }
