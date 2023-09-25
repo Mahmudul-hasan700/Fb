@@ -19,7 +19,7 @@
 
   <meta name="msapplication-TileColor" content="#00b887">
 
-
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <!-- Include Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
@@ -36,7 +36,7 @@
       <!-- Logo on the Left Side -->
       <a class="navbar-brand" href="./">
         <img src="../logo.png" width="30" height="30"
-          class="d-inline-block align-top" alt=" TikTok downloader">
+          class="d-inline-block align-top" alt="TikTok downloader">
         <span>Fdown</span>
       </a>
 
@@ -60,7 +60,20 @@
           <li class="nav-item">
             <a class="nav-link" href="#">Contact</a>
           </li>
+                    <!-- Inside your navbar -->
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="languageDropdown"
+              data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Language
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+              <li><a class="dropdown-item" href="#" hreflang="en">English</a></li>
+              <li><a class="dropdown-item" href="#" hreflang="vi">Vietnamese</a></li>
+              <li><a class="dropdown-item" href="#" hreflang="ar">Arabic</a></li>
+            </ul>
+          </div>
         </ul>
+        
       </div>
     </div>
   </nav>
@@ -75,7 +88,7 @@
             <button type="button" class="btn btn-paste  close-button" onclick="pasteFromClipboard()">
             </button>
           </div>
-          <input type="submit" class="button" id="submit" value="Download">
+          <button type="submit" class="button" id="submit"><i class='bx bxs-download'></i> Download</button>
         </form>
       </div>
 
@@ -307,8 +320,8 @@
   </script>
   <script>
     // Get references to the input field and download button
-    const videoUrlInput = document.getElementById('videoUrl');
-    const downloadButton = document.getElementById('downloadButton');
+    const videoUrlInput = document.getElementById('URL');
+    const downloadButton = document.getElementById('submit');
     const errorMessage = document.querySelector('.error-message');
 
     // Function to check if a URL is a valid Facebook video link
