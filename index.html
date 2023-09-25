@@ -397,17 +397,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <div class="container">
     <div class="loader-container">
-      <h1 class="text-center mt-5">Download & Save Facebook Video</h1>
+      <h1 class="text-center my-5">Download & Save Facebook Video</h1>
       <div class="form">
-        <div class="input-container">
-          <input class="input input-url" type="text" id="videoUrl" placeholder="Paste Facebook video URL" required>
-          <div class="paste-div border-0">
-            <button type="button" class="btn btn-paste  close-button" onclick="pasteFromClipboard()">
+        <div class="form" id="input-container">
+  <div class="input-container">
+    <input class="input input-url" type="text" id="videoUrl" placeholder="Paste Facebook video URL" required>
+    <div class="paste-div border-0">
+    <button type="button" class="btn btn-paste  close-button" onclick="pasteFromClipboard()">
             </button>
-            </button>
-          </div>
-          <button class="button" id="downloadButton">Download</button>
-        </div>
+    </div>
+    <button class="button" id="downloadButton">Download</button>
+  </div>
+</div>
       </div>
 
       <div id="loader-wrapper" class="hidden">
@@ -466,6 +467,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
   </div>
+  <div id="videoInfo" style="display: none;">
+  <img id="thumbnail" src="" alt="Video Thumbnail">
+  <h3 id="videoTitle"></h3>
+</div>
   <div id="downloadLinks" class="buttons" style="display: none;">
     <div id="videoInfo" style="display: none;">
       <img id="thumbnail" src="" alt="Video Thumbnail">
@@ -649,42 +654,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 ]
 }
 
-  </script>
-  <script>
-    // Get references to the input field and download button
-    const videoUrlInput = document.getElementById('videoUrl');
-    const downloadButton = document.getElementById('downloadButton');
-    const errorMessage = document.querySelector('.error-message');
-
-    // Function to check if a URL is a valid Facebook video link
-    function isValidFacebookVideoLink(url) {
-      return url.includes('facebook.com') || url.includes('fb.watch');
-    }
-
-    // Add an event listener to the input field to check when it changes
-    videoUrlInput.addEventListener('input', () => {
-      const videoUrl = videoUrlInput.value;
-
-      // Check if the entered URL is a valid Facebook video link
-      if (isValidFacebookVideoLink(videoUrl)) {
-        // Enable the download button
-        downloadButton.disabled = false;
-        // Hide the error message
-        errorMessage.classList.add('hidden');
-      } else {
-        // Disable the download button
-        downloadButton.disabled = true;
-        // Show the error message
-        errorMessage.classList.remove('hidden');
-      }
-    });
-
-  </script>
-
+  </script>    
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="js/try.js">
+  <script src="j.js">
   </script>
-  <script src="js/jquery.js">
+  <script src="script.js">
 
   </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
