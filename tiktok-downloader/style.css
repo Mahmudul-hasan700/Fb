@@ -1,8 +1,7 @@
 @import url(https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap);
 
 body {
-  font-family: 'Inter', Roboto;
-
+  font-family: 'Inter', sens-sarif;
 }
 
 .navbar-brand {
@@ -258,7 +257,7 @@ body {
 }
 
 .text {
-  max-height: 3.3em;
+  max-height: 3.5em;
   overflow: hidden;
   line-height: 1.2em;
   margin: 0;
@@ -303,9 +302,7 @@ body {
   padding: 8px;
   width: 100%;
   background-color: rgba(0, 190, 100, 1);
-  /* Changed alpha value to 1 for full opacity */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  /* Adjusted box shadow */
   font-family: 'Inter', sens-sarif;
   font-weight: 500;
   margin: 0;
