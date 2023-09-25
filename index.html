@@ -9,27 +9,17 @@
 
   <meta name="description"
     content="FDownloader is a Facebook video downloader, allow to download Facebook videos with the best quality HD 1080p, 4K for free without installing software.">
-
   <meta name="keywords"
     content="download facebook videos,facebook video downloader,download mp3 facebook,convert facebook to mp3">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=3.0">
-
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
   <meta name="robots" content="index, follow">
-
   <meta name="revisit-after" content="1 days">
-
   <meta itemprop="name" content="fdown.netlify.app">
-
   <meta name="application-name" content="FDownloader.Net">
-
   <meta itemprop="description"
     content="FDown is a Facebook video downloader, allow to download Facebook videos with the best quality HD 1080p, 4K for free without installing software.">
-
   <meta itemprop="image" content="https://fdown.netlify.app/thumbnail-site-min.png">
-
   <meta property="og:type" content="website">
 
   <meta property="og:title" content="FDown - Download Video Facebook HD 1080p, 4k for free">
@@ -178,16 +168,174 @@
   },
 }
 </script>
+  <style>
+    body.modal-open {
+      overflow: hidden
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, .4);
+      align-items: center;
+      justify-content: center
+    }
+
+    .modal-content {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      pointer-events: auto;
+      background-color: #fff;
+      background-clip: padding-box;
+      border: 1px solid rgba(0, 0, 0, .175);
+      border-radius: .5rem;
+      outline: 0;
+      -webkit-animation-name: animatetop;
+      -webkit-animation-duration: .4s;
+      animation-name: animatetop;
+      animation-duration: .4s
+    }
+
+    @-webkit-keyframes animatetop {
+      from {
+        top: -300px;
+        opacity: 0
+      }
+
+      to {
+        top: 0;
+        opacity: 1
+      }
+    }
+
+    @keyframes animatetop {
+      from {
+        top: -300px;
+        opacity: 0
+      }
+
+      to {
+        top: 0;
+        opacity: 1
+      }
+    }
+
+    .modal-body {
+      padding: 2px 15px;
+      min-height: 250px
+    }
+
+    .modal-footer {
+      margin: 10px 0;
+      padding: 2px 15px
+    }
+
+    .btn.btn-secondary {
+      color: #fff;
+      background-color: #6c757d;
+      border: 1px solid #6c757d;
+      display: block;
+      width: 100%;
+      margin-bottom: 10px
+    }
+
+    @media(min-width:768px) {
+      .modal-content {
+        max-width: 1140px
+      }
+    }
+  </style>
+
+  <style>
+    .ad-container {
+      margin: 1.5rem auto;
+      text-align: center;
+    }
+
+    .AT-ads {
+      position: fixed;
+      box-shadow: 0 -6px 18px 0 rgb(9 32 76 / 8%);
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      background: #fefefe;
+      z-index: 100000;
+      line-height: 0;
+      text-align: center;
+    }
+
+    .responsive_ad {
+      margin: auto;
+      width: 280px;
+      height: 50px;
+    }
+
+    @media(min-width: 300px) {
+      .responsive_ad {
+        width: 300px;
+        height: 100px;
+      }
+    }
+
+    @media(min-width: 320px) {
+      .responsive_ad {
+        width: 320px;
+        height: 100px;
+      }
+
+    }
+
+    @media(min-width: 468px) {
+      .responsive_ad {
+        width: 468px;
+        height: 60px;
+      }
+    }
+
+    @media(min-width: 728px) {
+      .responsive_ad {
+        width: 728px;
+        height: 90px;
+      }
+    }
+
+    .AT-ads-close {
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px 0 0;
+      position: absolute;
+      right: 0;
+      top: -30px;
+      background-color: #fefefe;
+      box-shadow: 0 -6px 18px 0 rgb(9 32 76 / 8%);
+    }
+
+    .AT-ads-content {
+      margin: 5px auto;
+
+    }
+  </style>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3227806848574176"
     crossorigin="anonymous"></script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y92J9YEXZD"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-  gtag('config', 'G-Y92J9YEXZD');
-</script>
+    gtag('config', 'G-Y92J9YEXZD');
+  </script>
 </head>
 
 <body>
@@ -243,7 +391,7 @@
           <div class="paste-div border-0">
             <button type="button" class="btn btn-paste  close-button" onclick="pasteFromClipboard()">
             </button>
-          </button>
+            </button>
           </div>
           <button class="button" id="downloadButton">Download</button>
         </div>
@@ -318,14 +466,14 @@
 
     <a href="./"> <button class="another">Download another video</button></a>
   </div>
-        <div class="ad-container">
+  <div class="ad-container">
 
-        <ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px"
-          data-ad-client="ca-pub-3227806848574176" data-ad-slot="3063566126"></ins>
-        <script>
-          (adsbygoogle = window.adsbygoogle || []).push({})
-        </script>
-      </div>
+    <ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px"
+      data-ad-client="ca-pub-3227806848574176" data-ad-slot="3063566126"></ins>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({})
+    </script>
+  </div>
   <div class="container full-site my-5">
     <h2>Free online Facebook video downloader</h2>
 
@@ -352,12 +500,12 @@
         </ol>
 
       </div>
-            <div class="ad-container">
+      <div class="ad-container">
 
         <ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px"
           data-ad-client="ca-pub-3227806848574176" data-ad-slot="3063566126"></ins>
         <script>
-          (adsbygoogle = window.adsbygoogle || []).push({})
+        (adsbygoogle = window.adsbygoogle || []).push({})
         </script>
       </div>
       <div class="col-12 col-md-6">
@@ -396,14 +544,14 @@
     <p>FDown doesn't store videos. Neither do we keep copies of downloaded videos. All videos are hosted on
       Facebook's servers. Also, we don't keep track of the download histories of our users, thus making using FDown
       totally anonymous.</p>
-          <div class="ad-container">
+    <div class="ad-container">
 
-        <ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px"
-          data-ad-client="ca-pub-3227806848574176" data-ad-slot="3063566126"></ins>
-        <script>
+      <ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px"
+        data-ad-client="ca-pub-3227806848574176" data-ad-slot="3063566126"></ins>
+      <script>
           (adsbygoogle = window.adsbygoogle || []).push({})
-        </script>
-      </div>
+      </script>
+    </div>
 
     <div class="share">
       <button class="btn share-button" type="button">
@@ -446,6 +594,14 @@
 
     <p class="text-center">@2020 fdown.netlify.app</p>
   </div>
+    <div id="dlModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-body" id="ad-content"></div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" id="closeModalBtn">Close</button>
+      </div>
+    </div>
+  </div>
   <script type="6d533cca5d6b6877ccf21b19-text/javascript">
 
   function showAd(){document.getElementsByTagName("BODY")[0].classList.add("modal-open");modal.style.display="flex";document.getElementById("ad-content").innerHTML='
@@ -468,8 +624,17 @@
   </script>
 
   <script type="application/ld+json">
-
-  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"FDownloader - Download Video Facebook HD 1080p, 4k for free"}]}
+{
+"@context":"https://schema.org",
+"@type":"BreadcrumbList",
+"itemListElement":[
+{
+"@type":"ListItem",
+"position":1,
+"name":"FDownloader - Download Video Facebook HD 1080p, 4k for free"
+}
+]
+}
 
   </script>
   <script>
@@ -506,8 +671,8 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="js/try.js">
   </script>
-    <script src="js/jquery.js">
-    
+  <script src="js/jquery.js">
+
   </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
