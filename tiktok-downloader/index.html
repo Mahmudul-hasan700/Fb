@@ -296,6 +296,15 @@
 
     <p class="text-center">@2020 eissaweb.com</p>
   </div>
+   <script>
+    window.onload = function () {
+      // Get the URL without the query string
+      const cleanURL = window.location.href.split('?')[0];
+
+      // Update the URL without the query string
+      history.replaceState(null, null, cleanURL);
+    };
+  </script>
   <script>
     // Get references to the input field and download button
     const videoUrlInput = document.getElementById('videoUrl');
@@ -328,8 +337,6 @@
   </script>
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="js/try.js">
-  </script>
     <script src="jquery.js">
 
     </script>
