@@ -360,8 +360,6 @@ body {
   margin: 5px 0;
   width: 100%;
   transition: 0.15s all ease;
-  display: block;
-
 }
 
 .nav-links:hover,
