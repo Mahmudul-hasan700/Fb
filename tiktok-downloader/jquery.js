@@ -1,12 +1,3 @@
-function toggleAnswer() {
-  const answer = this.nextElementSibling;
-  answer.classList.toggle("hidden");
-}
-
-const questions = document.querySelectorAll(".question .toggle");
-questions.forEach(question => {
-  question.addEventListener("click", toggleAnswer);
-});
 
 const shareButton = document.querySelector(".share-button");
 
