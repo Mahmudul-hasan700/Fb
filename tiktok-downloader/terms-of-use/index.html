@@ -2,814 +2,745 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TikTok video downloader</title>
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TikTok video downloader</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
 
-  <link rel="icon" type="image/png" sizes="192x192" href="../android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../android-chrome-192x192.png">
 
-  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
 
-  <link rel="manifest" href="https://fdown.netlify.app/icons/manifest.json">
+    <link rel="manifest" href="https://fdown.netlify.app/icons/manifest.json">
 
-  <link rel="mask-icon" href="https://fdownloader.net/icons/safari-pinned-tab.svg" color="#00b887">
+    <link rel="mask-icon" href="https://fdownloader.net/icons/safari-pinned-tab.svg" color="#00b887">
 
-  <link rel="shortcut icon" href="https://fb.mahmudulhasan56.repl.co/favicon.png">
+    <link rel="shortcut icon" href="https://fb.mahmudulhasan56.repl.co/favicon.png">
 
-  <meta name="msapplication-TileColor" content="#00b887">
+    <meta name="msapplication-TileColor" content="#00b887">
 
-  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-  <!-- Include Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-  
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Include Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
 
     <style>
-  .ad-container {
+        .ad-container {
 
-        margin: 1.5rem auto;
+            margin: 1.5rem auto;
 
-        text-align: center;
+            text-align: center;
 
-  }
-
-
-
-  .AT-ads {
-
-    position: fixed;
-
-    box-shadow: 0 -6px 18px 0 rgb(9 32 76 / 8%);
-
-    left: 0;
-
-    bottom: 0;
-
-    width: 100%;
-
-    background: #fefefe;
-
-    z-index: 100000;
-
-    line-height: 0;
-
-    text-align: center;
-
-  }
+        }
 
 
 
-  .responsive_ad {
+        .AT-ads {
 
-        margin: auto;
+            position: fixed;
 
-        width: 280px;
+            box-shadow: 0 -6px 18px 0 rgb(9 32 76 / 8%);
 
-        height: 50px;
+            left: 0;
 
-  }
+            bottom: 0;
+
+            width: 100%;
+
+            background: #fefefe;
+
+            z-index: 100000;
+
+            line-height: 0;
+
+            text-align: center;
+
+        }
 
 
-
-  @media(min-width: 300px) {
 
         .responsive_ad {
+
+            margin: auto;
+
+            width: 280px;
+
+            height: 50px;
+
+        }
+
+
+
+        @media(min-width: 300px) {
+
+            .responsive_ad {
 
                 width: 300px;
 
                 height: 100px;
 
+            }
+
         }
 
-  }
 
 
+        @media(min-width: 320px) {
 
-  @media(min-width: 320px) {
-
-        .responsive_ad {
+            .responsive_ad {
 
                 width: 320px;
 
                 height: 100px;
 
+            }
+
         }
 
-  }
 
 
+        @media(min-width: 468px) {
 
-  @media(min-width: 468px) {
-
-        .responsive_ad {
+            .responsive_ad {
 
                 width: 468px;
 
                 height: 60px;
 
+            }
+
         }
 
-  }
 
 
+        @media(min-width: 728px) {
 
-  @media(min-width: 728px) {
-
-        .responsive_ad {
+            .responsive_ad {
 
                 width: 728px;
 
                 height: 90px;
 
+            }
+
         }
 
-  }
 
 
+        .AT-ads-close {
 
-  .AT-ads-close {
+            width: 30px;
 
-    width: 30px;
+            height: 30px;
 
-    height: 30px;
+            display: flex;
 
-    display: flex;
+            align-items: center;
 
-    align-items: center;
+            justify-content: center;
 
-    justify-content: center;
+            border-radius: 12px 0 0;
 
-    border-radius: 12px 0 0;
+            position: absolute;
 
-    position: absolute;
+            right: 0;
 
-    right: 0;
+            top: -30px;
 
-    top: -30px;
+            background-color: #fefefe;
 
-    background-color: #fefefe;
+            box-shadow: 0 -6px 18px 0 rgb(9 32 76 / 8%);
 
-    box-shadow: 0 -6px 18px 0 rgb(9 32 76 / 8%);
+        }
 
-  }
+        .AT-ads-content {
 
-  .AT-ads-content {
+            margin: 5px auto;
 
-    margin: 5px auto;
-
-  }
-
-  </style>
-  <link rel="stylesheet" href="https://fdown.netlify.app/css/style.css" />
+        }
+    </style>
+    <link rel="stylesheet" href="https://fdown.netlify.app/css/style.css" />
 
 </head>
 
-<body class="leading-normal tracking-normal text-gray-900" style=
-"font-family:'Source Sans Pro',sans-serif">
+<body class="leading-normal tracking-normal text-gray-900" style="font-family:'Source Sans Pro',sans-serif">
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container">
-      <!-- Logo on the Left Side -->
-      <a class="navbar-brand" href="../">
-        <img src="https://fb.mahmudulhasan56.repl.co/logo.png" width="30" height="30" class="d-inline-block align-top" alt="TikTok downloader">
-        <span>Fdown</span>
-      </a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <!-- Logo on the Left Side -->
+            <a class="navbar-brand" href="../">
+                <img src="https://fb.mahmudulhasan56.repl.co/logo.png" width="30" height="30" class="d-inline-block align-top" alt="TikTok downloader">
+                <span>Fdown</span>
+            </a>
 
-      <!-- Menu Items on the Right Side -->
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="https://fdown.netlify.app/youtube-downloader">Youtube Downloader</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://fdown.netlify.app">Facebook Downloader</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://fdown.netlify.app/instagram-downloader">Instagram Downloader</a>
-          </li>
-          <!-- Inside your navbar -->
-          <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="languageDropdown"
-              data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Language
+            <!-- Menu Items on the Right Side -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
             </button>
-            <ul class="dropdown-menu" aria-labelledby="languageDropdown">
-              <li><a class="dropdown-item" href="#" hreflang="en">English</a></li>
-              <li><a class="dropdown-item" href="#" hreflang="vi">Vietnamese</a></li>
-              <li><a class="dropdown-item" href="#" hreflang="ar">Arabic</a></li>
-            </ul>
-          </div>
-        </ul>
 
-      </div>
-    </div>
-  </nav>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://fdown.netlify.app/youtube-downloader">Youtube Downloader</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://fdown.netlify.app">Facebook Downloader</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://fdown.netlify.app/instagram-downloader">Instagram Downloader</a>
+                    </li>
+                    <!-- Inside your navbar -->
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Language
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                            <li><a class="dropdown-item" href="#" hreflang="en">English</a></li>
+                            <li><a class="dropdown-item" href="#" hreflang="vi">Vietnamese</a></li>
+                            <li><a class="dropdown-item" href="#" hreflang="ar">Arabic</a></li>
+                        </ul>
+                    </div>
+                </ul>
 
-  <div class=
+            </div>
+        </div>
+    </nav>
 
-    "container mt-5 items-center max-w-screen-md px-4 pt-10 mx-auto md:pt-10">
+    <div class="container mt-5 items-center max-w-screen-md px-4 pt-10 mx-auto md:pt-10">
 
-      <div class="fade-in">
+        <div class="fade-in">
 
-        <header>
+            <header>
 
-          <h1 class="mb-5 text-2xl font-medium">Terms of
+                <h1 class="mb-5 text-2xl font-medium">Terms of
 
-          Service</h1>
+                    Service</h1>
 
-        </header>
+            </header>
 
-        <div class="entry-content">
+            <div class="entry-content">
 
-          <p class="mb-6 leading-7">These Terms of Service (the
+                <p class="mb-6 leading-7">These Terms of Service (the
 
-          “Agreement” or “Terms of Service”) is a legally-binding
+                    “Agreement” or “Terms of Service”) is a legally-binding
 
-          agreement between you, either an individual or an entity
+                    agreement between you, either an individual or an entity
 
-          (“you” or “user”), and TikMate.app regarding use of
+                    (“you” or “user”), and FDown.netlify.app regarding use of
 
-          TikMate.app and other related websites owned and/or
+                    FDown.netlify.app and other related websites owned and/or
 
-          operated by TikMate.app (together, the “Website”),
+                    operated by FDown.netlify.app (together, the “Website”),
 
-          products, and Services, as defined below.</p>
+                    products, and Services, as defined below.</p>
 
-          <p class="mb-6 leading-7">TikMate.app makes Website, and
+                <p class="mb-6 leading-7">FDown.netlify.app makes Website, and
 
-          Services, including all content, information, graphics,
+                    Services, including all content, information, graphics,
 
-          documents, text, products, and all other elements and
+                    documents, text, products, and all other elements and
 
-          products offered through the Website and Services
+                    products offered through the Website and Services
 
-          (collectively, the “Content”) available for your use
+                    (collectively, the “Content”) available for your use
 
-          subject to the terms and conditions set forth in this
+                    subject to the terms and conditions set forth in this
 
-          document.</p>
+                    document.</p>
 
-          <p class="mb-6 leading-7">By accessing and using the
+                <p class="mb-6 leading-7">By accessing and using the
 
-          Website and Services you agree to be bound by and to
+                    Website and Services you agree to be bound by and to
 
-          accept these Terms of Service and all terms and
+                    accept these Terms of Service and all terms and
 
-          conditions contained and/or referenced herein as well as
+                    conditions contained and/or referenced herein as well as
 
-          any additional terms and conditions set forth on the
+                    any additional terms and conditions set forth on the
 
-          Website.</p>
+                    Website.</p>
 
-          <p class="mb-6 leading-7">If you do not agree to all the
+                <p class="mb-6 leading-7">If you do not agree to all the
 
-          terms and conditions in these Terms of Service, you
+                    terms and conditions in these Terms of Service, you
 
-          should not use the Website or Services. If you do not
+                    should not use the Website or Services. If you do not
 
-          agree to any additional specific terms which apply to
+                    agree to any additional specific terms which apply to
 
-          particular Content or to a particular transaction
+                    particular Content or to a particular transaction
 
-          concluded through the Website or Services, then you
+                    concluded through the Website or Services, then you
 
-          should not use the part of the Website or Services which
+                    should not use the part of the Website or Services which
 
-          contains such Content or through which such transactions
+                    contains such Content or through which such transactions
 
-          are concluded. Also, when you use any current or future
+                    are concluded. Also, when you use any current or future
 
-          TikMate.app service or visit TikMate.app’s Website or
+                    FDown.netlify.app service or visit FDown.netlify.app’s Website or
 
-          obtain any products or services, whether free of charge
+                    obtain any products or services, whether free of charge
 
-          or for payment, provided by TikMate.app, you will be
+                    or for payment, provided by FDown.netlify.app, you will be
 
-          subject to the guidelines and conditions applicable to
+                    subject to the guidelines and conditions applicable to
 
-          such products or services.</p>
+                    such products or services.</p>
 
-          <p class="mb-6 leading-7">These Terms of Service may be
+                <p class="mb-6 leading-7">These Terms of Service may be
 
-          amended by TikMate.app at any time upon notice provided
+                    amended by FDown.netlify.app at any time upon notice provided
 
-          by any of the following means: through a posting on the
+                    by any of the following means: through a posting on the
 
-          main page of the Website, at or after you login into your
+                    main page of the Website, at or after you login into your
 
-          User Account (as defined below), or by e-mail to the
+                    User Account (as defined below), or by e-mail to the
 
-          address you provided when you set up your User Account.
+                    address you provided when you set up your User Account.
 
-          Your failure to provide or maintain accurate or current
+                    Your failure to provide or maintain accurate or current
 
-          contact information in your User Account will not obviate
+                    contact information in your User Account will not obviate
 
-          your responsibility to comply with these Terms of Service
+                    your responsibility to comply with these Terms of Service
 
-          as amended from time to time.</p>
+                    as amended from time to time.</p>
 
-          <p class="mb-6 leading-7">Please check these Terms of
+                <p class="mb-6 leading-7">Please check these Terms of
 
-          Service regularly to ensure that you are aware of all
+                    Service regularly to ensure that you are aware of all
 
-          terms governing your use of the Website and Services.
+                    terms governing your use of the Website and Services.
 
-          Specific terms and conditions may apply to non-user
+                    Specific terms and conditions may apply to non-user
 
-          generated Content. Such specific terms may be in addition
+                    generated Content. Such specific terms may be in addition
 
-          to these Terms of Service or, where inconsistent with
+                    to these Terms of Service or, where inconsistent with
 
-          these Terms of Service such specific terms will supersede
+                    these Terms of Service such specific terms will supersede
 
-          these Terms of Service only to the extent that the
+                    these Terms of Service only to the extent that the
 
-          content or intent of such specific terms is inconsistent
+                    content or intent of such specific terms is inconsistent
 
-          with these Terms of Service.</p>
+                    with these Terms of Service.</p>
 
-          <p class="mb-6 leading-7">TikMate.app reserves the right
+                <p class="mb-6 leading-7">FDown.netlify.app reserves the right
 
-          to make changes or updates with respect the Content or
+                    to make changes or updates with respect the Content or
 
-          the format thereof at any time without notice.
+                    the format thereof at any time without notice.
 
-          TikMate.app also reserves the right to terminate or
+                    FDown.netlify.app also reserves the right to terminate or
 
-          restrict your access to the Website and Services or any
+                    restrict your access to the Website and Services or any
 
-          portion thereof for any reason whatsoever at its sole
+                    portion thereof for any reason whatsoever at its sole
 
-          discretion.</p>
+                    discretion.</p>
 
-          <h2 class="mb-5 text-2xl font-medium">Users’
+                <h2 class="mb-5 text-2xl font-medium">Users’
 
-          Obligations</h2>
+                    Obligations</h2>
 
-          <p class="mb-6 leading-7">You agree to use the Website
+                <p class="mb-6 leading-7">You agree to use the Website
 
-          and Services only for purposes permitted by these Terms
+                    and Services only for purposes permitted by these Terms
 
-          of Service as well as any applicable law, regulation or
+                    of Service as well as any applicable law, regulation or
 
-          generally accepted practices or guidelines in the
+                    generally accepted practices or guidelines in the
 
-          relevant jurisdictions. <strong>TIKMATE.APP IS NOT
+                    relevant jurisdictions. <strong>TIKMATE.APP IS NOT
 
-          RESPONSIBLE FOR ANY VIOLATION OF APPLICABLE LAWS, RULES,
+                        RESPONSIBLE FOR ANY VIOLATION OF APPLICABLE LAWS, RULES,
 
-          OR REGULATIONS COMMITTED BY YOU OR A THIRD PARTY AT YOUR
+                        OR REGULATIONS COMMITTED BY YOU OR A THIRD PARTY AT YOUR
 
-          BEHEST. IT IS YOUR RESPONSIBILITY TO ENSURE THAT YOUR USE
+                        BEHEST. IT IS YOUR RESPONSIBILITY TO ENSURE THAT YOUR USE
 
-          OF THE TIKMATE.APP, WEBSITE, AND SERVICES DOES NOT
+                        OF THE TIKMATE.APP, WEBSITE, AND SERVICES DOES NOT
 
-          CONTRAVENE APPLICABLE LAWS, RULES, OR
+                        CONTRAVENE APPLICABLE LAWS, RULES, OR
 
-          REGULATIONS</strong>. Specifically, you agree and warrant
+                        REGULATIONS</strong>. Specifically, you agree and warrant
 
-          that in using the Website and Services, your actions do
+                    that in using the Website and Services, your actions do
 
-          not contravene the laws, rules, or regulations of (1) the
+                    not contravene the laws, rules, or regulations of (1) the
 
-          country, state, or locality where you reside, or (2) the
+                    country, state, or locality where you reside, or (2) the
 
-          country, state, or locality where TikMate.app is located
+                    country, state, or locality where FDown.netlify.app is located
 
-          or operates. This includes complying with applicable
+                    or operates. This includes complying with applicable
 
-          export and import restrictions as well as other
+                    export and import restrictions as well as other
 
-          restrictions.</p>
+                    restrictions.</p>
 
-          <h2 class="mb-5 text-2xl font-medium">Your Use of the
+                <h2 class="mb-5 text-2xl font-medium">Your Use of the
 
-          Website and Services</h2>
+                    Website and Services</h2>
 
-          <p class="mb-6 leading-7">You agree not to access (or
+                <p class="mb-6 leading-7">You agree not to access (or
 
-          attempt to access) the Services by any means other than
+                    attempt to access) the Services by any means other than
 
-          through the means provided by TikMate.app or its
+                    through the means provided by FDown.netlify.app or its
 
-          authorized partners. You agree not to access (or attempt
+                    authorized partners. You agree not to access (or attempt
 
-          to access) the Services by way of automated means and
+                    to access) the Services by way of automated means and
 
-          that you will not engage in any activity that interferes
+                    that you will not engage in any activity that interferes
 
-          with or disrupts the Services (or the servers and
+                    with or disrupts the Services (or the servers and
 
-          networks which are connected to the Services).</p>
+                    networks which are connected to the Services).</p>
 
-          <p class="mb-6 leading-7">Further, you agree:</p>
+                <p class="mb-6 leading-7">Further, you agree:</p>
 
-          <ul class="mb-6 ml-8 leading-7 list-disc">
+                <ul class="mb-6 ml-8 leading-7 list-disc">
 
-            <li>not to disrupt or interfere with any other user’s
+                    <li>not to disrupt or interfere with any other user’s
 
-            enjoyment of the Website and Services or affiliated or
+                        enjoyment of the Website and Services or affiliated or
 
-            linked sites;</li>
+                        linked sites;</li>
 
-            <li>not to upload, post, or otherwise transmit through
+                    <li>not to upload, post, or otherwise transmit through
 
-            the Website and Services any viruses or other harmful,
+                        the Website and Services any viruses or other harmful,
 
-            disruptive, or destructive files;</li>
+                        disruptive, or destructive files;</li>
 
-            <li>not to use or attempt to use another user’s User
+                    <li>not to use or attempt to use another user’s User
 
-            Account, password, or system;</li>
+                        Account, password, or system;</li>
 
-            <li>not to access or attempt to access any Content or
+                    <li>not to access or attempt to access any Content or
 
-            User Content (as defined below), which you are not
+                        User Content (as defined below), which you are not
 
-            authorized to access under the terms herein;</li>
+                        authorized to access under the terms herein;</li>
 
-            <li>not to disrupt or interfere with the security of,
+                    <li>not to disrupt or interfere with the security of,
 
-            or otherwise cause harm to the Website, Services,
+                        or otherwise cause harm to the Website, Services,
 
-            Content, User Content, system resources, accounts,
+                        Content, User Content, system resources, accounts,
 
-            passwords, servers, or networks connected to or
+                        passwords, servers, or networks connected to or
 
-            accessible through the Website and Services or any
+                        accessible through the Website and Services or any
 
-            affiliated or linked sites.</li>
+                        affiliated or linked sites.</li>
 
-          </ul>
+                </ul>
 
-          <h2 class="mb-5 text-2xl font-medium">Term and
+                <h2 class="mb-5 text-2xl font-medium">Term and
 
-          Termination</h2>
+                    Termination</h2>
 
-          <p class="mb-6 leading-7">The term of these Terms of
+                <p class="mb-6 leading-7">The term of these Terms of
 
-          Service (“Term”) shall begin when you start using the
+                    Service (“Term”) shall begin when you start using the
 
-          Website or Services and shall continue in perpetuity
+                    Website or Services and shall continue in perpetuity
 
-          unless otherwise terminated by TikMate.app or you by
+                    unless otherwise terminated by FDown.netlify.app or you by
 
-          written notice. TikMate.app reserves the right to change,
+                    written notice. FDown.netlify.app reserves the right to change,
 
-          suspend or discontinue the Services or any portion
+                    suspend or discontinue the Services or any portion
 
-          thereof, at any time. Without prejudice to any other
+                    thereof, at any time. Without prejudice to any other
 
-          rights, these Terms of Service will terminate
+                    rights, these Terms of Service will terminate
 
-          automatically if you fail to comply with any of the
+                    automatically if you fail to comply with any of the
 
-          limitations or other requirements described herein. Upon
+                    limitations or other requirements described herein. Upon
 
-          any termination or expiration of these Terms of Service,
+                    any termination or expiration of these Terms of Service,
 
-          you must immediately cease using this Website and the
+                    you must immediately cease using this Website and the
 
-          Services including without limitation any use of
+                    Services including without limitation any use of
 
-          TikMate.app’s trademarks, trade names, copyrights and
+                    FDown.netlify.app’s trademarks, trade names, copyrights and
 
-          other intellectual property.</p>
+                    other intellectual property.</p>
 
-          <p class="mb-6 leading-7"><strong>UPON TERMINATION OF
+                <p class="mb-6 leading-7"><strong>UPON TERMINATION OF
 
-          THIS AGREEMENT YOU WILL NO LONGER BE AUTHORIZED TO USE
+                        THIS AGREEMENT YOU WILL NO LONGER BE AUTHORIZED TO USE
 
-          THE WEBSITE OR SERVICES IN ANY WAY.</strong></p>
+                        THE WEBSITE OR SERVICES IN ANY WAY.</strong></p>
 
-          <h2 class="mb-5 text-2xl font-medium">Links to Other
+                <h2 class="mb-5 text-2xl font-medium">Links to Other
 
-          Sites and Third Party Materials</h2>
+                    Sites and Third Party Materials</h2>
 
-          <p class="mb-6 leading-7">The Website and Services may
+                <p class="mb-6 leading-7">The Website and Services may
 
-          include links to other Website and/or third party
+                    include links to other Website and/or third party
 
-          products and that are not under TikMate.app’s control
+                    products and that are not under FDown.netlify.app’s control
 
-          (collectively, “Third Party Materials”). TikMate.app
+                    (collectively, “Third Party Materials”). FDown.netlify.app
 
-          shall not be responsible in any way for such Third Party
+                    shall not be responsible in any way for such Third Party
 
-          Materials. TikMate.app provides such links only for the
+                    Materials. FDown.netlify.app provides such links only for the
 
-          convenience of the users of the Website and Services, and
+                    convenience of the users of the Website and Services, and
 
-          the inclusion of any link to any Third Party Materials
+                    the inclusion of any link to any Third Party Materials
 
-          does not imply endorsement by TikMate.app of the content,
+                    does not imply endorsement by FDown.netlify.app of the content,
 
-          products and/ or services of such Third Party Materials.
+                    products and/ or services of such Third Party Materials.
 
-          Notwithstanding any provision to the contrary herein,
+                    Notwithstanding any provision to the contrary herein,
 
-          nothing in these Terms of Service shall be construed as
+                    nothing in these Terms of Service shall be construed as
 
-          to grant you any rights or licenses with regard to such
+                    to grant you any rights or licenses with regard to such
 
-          Third Party Materials or to entitle you to use such Third
+                    Third Party Materials or to entitle you to use such Third
 
-          Party Materials.</p>
+                    Party Materials.</p>
 
-          <h2 class="mb-5 text-2xl font-medium">Intellectual
+                <h2 class="mb-5 text-2xl font-medium">Intellectual
 
-          Property</h2>
+                    Property</h2>
 
-          <p class="mb-6 leading-7">Copyright, trademark and all
+                <p class="mb-6 leading-7">Copyright, trademark and all
 
-          other proprietary rights in the Website, TikMate.app,
+                    other proprietary rights in the Website, FDown.netlify.app,
 
-          Services, and Content (including but not limited to
+                    Services, and Content (including but not limited to
 
-          software, services, audio, video, text and photographs,
+                    software, services, audio, video, text and photographs,
 
-          but excluding User Content) rest with TikMate.app and/or
+                    but excluding User Content) rest with FDown.netlify.app and/or
 
-          its licensors. Unless otherwise specifically provided
+                    its licensors. Unless otherwise specifically provided
 
-          herein or authorized by TikMate.app in writing, all
+                    herein or authorized by FDown.netlify.app in writing, all
 
-          rights in the Website, Services, and Content not
+                    rights in the Website, Services, and Content not
 
-          expressly granted herein are reserved. You agree not to
+                    expressly granted herein are reserved. You agree not to
 
-          copy, republish, frame, make available for download,
+                    copy, republish, frame, make available for download,
 
-          transmit, modify, rent, lease, loan, sell, assign,
+                    transmit, modify, rent, lease, loan, sell, assign,
 
-          distribute, license, sublicense, reverse engineer, or
+                    distribute, license, sublicense, reverse engineer, or
 
-          create derivative works based on the Content, Website,
+                    create derivative works based on the Content, Website,
 
-          TikMate.app, or Services, other than in conjunction with
+                    FDown.netlify.app, or Services, other than in conjunction with
 
-          the Services offered by TikMate.app through the
+                    the Services offered by FDown.netlify.app through the
 
-          Websites.</p>
+                    Websites.</p>
 
-          <p class="mb-6 leading-7">TikMate.app hereby disclaims
+                <p class="mb-6 leading-7">FDown.netlify.app hereby disclaims
 
-          any rights to trademarks, service marks, trade names,
+                    any rights to trademarks, service marks, trade names,
 
-          logos, copyright, patents, domain names or other
+                    logos, copyright, patents, domain names or other
 
-          intellectual property interests of third parties. All
+                    intellectual property interests of third parties. All
 
-          intellectual property interests of third parties
+                    intellectual property interests of third parties
 
-          referenced herein, including without limitation Third
+                    referenced herein, including without limitation Third
 
-          Party Material or otherwise provided on this Website are
+                    Party Material or otherwise provided on this Website are
 
-          the properties of their respective owners. TikMate.app
+                    the properties of their respective owners. FDown.netlify.app
 
-          disclaims any proprietary interests in the intellectual
+                    disclaims any proprietary interests in the intellectual
 
-          property rights other than their own.</p>
+                    property rights other than their own.</p>
 
-          <h2 class="mb-5 text-2xl font-medium">Disclaimer</h2>
+                <h2 class="mb-5 text-2xl font-medium">Disclaimer</h2>
 
-          <p class="mb-6 leading-7">The materials on TikMate.app’s
+                <p class="mb-6 leading-7">The materials on FDown.netlify.app’s
 
-          website are provided “as is”. TikMate.app makes no
+                    website are provided “as is”. FDown.netlify.app makes no
 
-          warranties, expressed or implied, and hereby disclaims
+                    warranties, expressed or implied, and hereby disclaims
 
-          and negates all other warranties, including without
+                    and negates all other warranties, including without
 
-          limitation, implied warranties or conditions of
+                    limitation, implied warranties or conditions of
 
-          merchantability, fitness for a particular purpose, or
+                    merchantability, fitness for a particular purpose, or
 
-          non-infringement of intellectual property or other
+                    non-infringement of intellectual property or other
 
-          violation of rights. Further, TikMate.app does not
+                    violation of rights. Further, FDown.netlify.app does not
 
-          warrant or make any representations concerning the
+                    warrant or make any representations concerning the
 
-          accuracy, likely results, or reliability of the use of
+                    accuracy, likely results, or reliability of the use of
 
-          the materials on its Internet web site or otherwise
+                    the materials on its Internet web site or otherwise
 
-          relating to such materials or on any sites linked to this
+                    relating to such materials or on any sites linked to this
 
-          site.</p>
+                    site.</p>
 
-          <h2 class="mb-5 text-2xl font-medium">Limitations</h2>
+                <h2 class="mb-5 text-2xl font-medium">Limitations</h2>
 
-          <p class="mb-6 leading-7">In no event shall TikMate.app
+                <p class="mb-6 leading-7">In no event shall FDown.netlify.app
 
-          or its suppliers be liable for any damages (including,
+                    or its suppliers be liable for any damages (including,
 
-          without limitation, damages for loss of data or profit,
+                    without limitation, damages for loss of data or profit,
 
-          or due to business interruption,) arising out of the use
+                    or due to business interruption,) arising out of the use
 
-          or inability to use the materials on TikMate.app’s
+                    or inability to use the materials on FDown.netlify.app’s
 
-          Internet site, even if TikMate.app or a TikMate.app
+                    Internet site, even if FDown.netlify.app or a FDown.netlify.app
 
-          authorized representative has been notified orally or in
+                    authorized representative has been notified orally or in
 
-          writing of the possibility of such damage. Because some
+                    writing of the possibility of such damage. Because some
 
-          jurisdictions do not allow limitations on implied
+                    jurisdictions do not allow limitations on implied
 
-          warranties, or limitations of liability for consequential
+                    warranties, or limitations of liability for consequential
 
-          or incidental damages, these limitations may not apply to
+                    or incidental damages, these limitations may not apply to
 
-          you.</p>
+                    you.</p>
 
-          <h2 class="mb-5 text-2xl font-medium">Unlawful or
+                <h2 class="mb-5 text-2xl font-medium">Unlawful or
 
-          Prohibited Use</h2>
+                    Prohibited Use</h2>
 
-          <p class="mb-6 leading-7">You may not use the Website or
+                <p class="mb-6 leading-7">You may not use the Website or
 
-          Services for any purpose that is unlawful, prohibited by
+                    Services for any purpose that is unlawful, prohibited by
 
-          these Terms of Service, or in any way interferes or
+                    these Terms of Service, or in any way interferes or
 
-          attempts to interfere with the proper working of the
+                    attempts to interfere with the proper working of the
 
-          Website or Services. You may not use the Website or
+                    Website or Services. You may not use the Website or
 
-          Services in any manner that could damage, disable,
+                    Services in any manner that could damage, disable,
 
-          overburden, or impair the Website or Services, or that
+                    overburden, or impair the Website or Services, or that
 
-          interferes with any third party’s use and enjoyment of
+                    interferes with any third party’s use and enjoyment of
 
-          the Website or Services. You agree that you will not use
+                    the Website or Services. You agree that you will not use
 
-          any third-party software that intercepts, “mines,” or
+                    any third-party software that intercepts, “mines,” or
 
-          otherwise collects information from or through the
+                    otherwise collects information from or through the
 
-          Website or Services. You may not obtain or attempt to
+                    Website or Services. You may not obtain or attempt to
 
-          obtain any materials or information through any means not
+                    obtain any materials or information through any means not
 
-          intentionally made available by TikMate.app to all users
+                    intentionally made available by FDown.netlify.app to all users
 
-          of the Website or Services. You shall not institute,
+                    of the Website or Services. You shall not institute,
 
-          assist, or become involved in an attack upon any
+                    assist, or become involved in an attack upon any
 
-          TikMate.app server or otherwise attempt to disrupt the
+                    FDown.netlify.app server or otherwise attempt to disrupt the
 
-          TikMate.app servers.</p>
+                    FDown.netlify.app servers.</p>
 
-          <h2 class="mb-5 text-2xl font-medium">Privacy</h2>
+                <h2 class="mb-5 text-2xl font-medium">Privacy</h2>
 
-          <p class="mb-6 leading-7">TikMate.app respects your
+                <p class="mb-6 leading-7">FDown.netlify.app respects your
 
-          privacy and the use and protection of your personal
+                    privacy and the use and protection of your personal
 
-          information. Please see our <a class=
+                    information. Please see our <a class="text-blue-600 underline hover:text-blue-400" href="/privacy-policy.html">Privacy Policy</a> for important
 
-          "text-blue-600 underline hover:text-blue-400" href=
+                    information and disclosures relating to the collection
 
-          "/privacy-policy.html">Privacy Policy</a> for important
+                    and use of your personal information in connection with
 
-          information and disclosures relating to the collection
+                    your use of this Website.</p>
 
-          and use of your personal information in connection with
+                <h2 class="mb-5 text-2xl font-medium">Linking to this
 
-          your use of this Website.</p>
+                    Website</h2>
 
-          <h2 class="mb-5 text-2xl font-medium">Linking to this
+                <p class="mb-6 leading-7">Linking to this Website is
 
-          Website</h2>
+                    permitted provided that you comply with the following
 
-          <p class="mb-6 leading-7">Linking to this Website is
+                    rules. You may link to the homepage of this Website or to
 
-          permitted provided that you comply with the following
+                    any other page of this Website. However, you are not
 
-          rules. You may link to the homepage of this Website or to
+                    allowed to use in-line linking (or hot-linking) or
 
-          any other page of this Website. However, you are not
+                    framing. You must not imply that FDown.netlify.app endorses or
 
-          allowed to use in-line linking (or hot-linking) or
+                    sponsors the linker or its website, products or
 
-          framing. You must not imply that TikMate.app endorses or
+                    services.</p>
 
-          sponsors the linker or its website, products or
+                <h2 class="mb-5 text-2xl font-medium">Miscellaneous</h2>
 
-          services.</p>
+                <p class="mb-6 leading-7">FDown.netlify.app does not bear any
 
-          <h2 class="mb-5 text-2xl font-medium">Miscellaneous</h2>
+                    responsibility nor assumes any risks if by any reason a
 
-          <p class="mb-6 leading-7">TikMate.app does not bear any
+                    product or a service made available on this Website
 
-          responsibility nor assumes any risks if by any reason a
+                    breaches national law of any country. Those who access
 
-          product or a service made available on this Website
+                    the Website or Services do so at their own initiative and
 
-          breaches national law of any country. Those who access
-
-          the Website or Services do so at their own initiative and
-
-          are responsible for compliance with their national
-
-          laws.</p>
+                    are responsible for compliance with their national laws.</p>
+            </div>
 
         </div>
 
-      </div>
-
     </div>
 
-  <hr class="my-5">
-  <div class="container footer">
-    <a href="../terms-of-use"> Terms & use</a>
-    |
-    <a href="../privacy"> Privacy policy</a>
-    |
-    <a href="../contact"> Contact</a>
+    <hr class="my-5">
+    <div class="container footer">
+        <a href="./"> Terms & use</a>
+        |
+        <a href="https://fdown.netlify.app/privacy-policy"> Privacy policy</a>
+        |
+        <a href="https://fdown.netlify.app/contact"> Contact</a>
 
-    <p class="text-center">@2020 FDown.netlify.app</p>
-  </div>
-  
-  <div class="AT-ads-content">
-
-      <ins class="adsbygoogle responsive_ad" style=
-
-      "display:inline-block;" data-ad-client=
-
-      "ca-pub-4471647433917534" data-ad-slot="2958118791"></ins>
-
-      <script>
-
-
-
-      (adsbygoogle = window.adsbygoogle || []).push({});
-
-      </script>
-
+        <p class="text-center">@2020 FDown.netlify.app</p>
     </div>
-  <script>
-    window.onload = function () {
-      // Get the URL without the query string
-      const cleanURL = window.location.href.split('?')[0];
 
-      // Update the URL without the query string
-      history.replaceState(null, null, cleanURL);
-    };
-  </script>
-  <script>
-    // Get references to the input field and download button
-    const videoUrlInput = document.getElementById('URL');
-    const downloadButton = document.getElementById('submit');
-    const errorMessage = document.querySelector('.error-message');
+    <div class="AT-ads-content">
 
-    // Function to check if a URL is a valid Facebook video link
-    function isValidFacebookVideoLink(url) {
-      return url.includes('vt.tiktok.com') || url.includes('tiktok.com');
-    }
+        <ins class="adsbygoogle responsive_ad" style="display:inline-block;" data-ad-client="ca-pub-3227806848574176" data-ad-slot="3063566126"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
 
-    // Add an event listener to the input field to check when it changes
-    videoUrlInput.addEventListener('input', () => {
-      const videoUrl = videoUrlInput.value;
-
-      // Check if the entered URL is a valid Facebook video link
-      if (isValidFacebookVideoLink(videoUrl)) {
-        // Enable the download button
-        downloadButton.disabled = false;
-        // Hide the error message
-        errorMessage.classList.add('hidden');
-      } else {
-        // Disable the download button
-        downloadButton.disabled = true;
-        // Show the error message
-        errorMessage.classList.remove('hidden');
-      }
-    });
-
-  </script>
-
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="jquery.js">
-
-  </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
-    integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
-    crossorigin="anonymous"></script>
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  <script src="script.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
