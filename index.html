@@ -763,31 +763,38 @@
 
     <p class="text-center">@2020 eissaweb.com</p>
   </div>
-  <script type="29ad0a92a377c88d0c4a5b0c-text/javascript">
-// Get the modal
-var modal = document.getElementById("dlModal");
-var btnClose = document.getElementById("closeModalBtn");
+<script type="text/javascript">
+    // Get the modal
+    var modal = document.getElementById("dlModal");
+    var btnClose = document.getElementById("closeModalBtn");
 
-function showAd() {
-  modal.style.display = "flex";
-  document.getElementById("dlModal").style.height = "-webkit-fill-available";
-  document.getElementById('ad-content').innerHTML = '<ins class="adsbygoogle" style="display:block; margin: 0 auto;" data-ad-client="ca-pub-1242426513429211" data-ad-slot="6334343369" data-ad-format="auto" data-full-width-responsive="true"></ins>';
-  (adsbygoogle = window.adsbygoogle || []).push({});
-  document.getElementsByTagName("BODY")[0].classList.add('modal-open');
-}
+    function showAd() {
+      modal.style.display = "flex";
+      document.getElementById("dlModal").style.height = "-webkit-fill-available";
+      document.getElementById('ad-content').innerHTML = '<ins class="adsbygoogle" style="display:block; margin: 0 auto;" data-ad-client="ca-pub-1242426513429211" data-ad-slot="6334343369" data-ad-format="auto" data-full-width-responsive="true"></ins>';
+      (adsbygoogle = window.adsbygoogle || []).push({});
+      document.getElementsByTagName("BODY")[0].classList.add('modal-open');
+    }
 
-btnClose.onclick = function () {
-  modal.style.display = "none";
-  document.getElementsByTagName("BODY")[0].classList.remove('modal-open');
-}
+    btnClose.onclick = function () {
+      modal.style.display = "none";
+      document.getElementsByTagName("BODY")[0].classList.remove('modal-open');
+    }
 
-window.onclick = function (event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-    document.getElementsByTagName("BODY")[0].classList.remove('modal-open');
-  }
-}
+    window.onclick = function (event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+        document.getElementsByTagName("BODY")[0].classList.remove('modal-open');
+      }
+    }
+
+    // Listen for beforeunload event
+    window.addEventListener('beforeunload', function (event) {
+      // Show the modal
+      showAd();
+    });
   </script>
+
 
   <div class="sticky" id="ad-sticky">
 
