@@ -41,21 +41,21 @@ pasteButton.addEventListener('click', toggleInput);
 function showLoadingAnimation() {
   const inputContainer = document.getElementById('input-container');
   const loaderWrapper = document.getElementById('loader-wrapper');
-  
+  const bodyitems = document.getElementById('body-items');
+  const adcontainer = document.getElementById('ad');
 
   if (inputContainer && loaderWrapper) {
     inputContainer.style.display = 'none';
     loaderWrapper.style.display = 'block';
+    bodyitems.style.display = 'none';
+    adcontainer.style.display = 'block';
   }
 }
 
 // Function to show the download buttons
 function showDownloadButtons() {
   document.getElementById('loader-wrapper').style.display = 'none';
-  document.getElementById('body-items').style.display = ('none');
-  
-  document.getElementById('ad').style.display = 'block';
-document.getElementById('downloadLinks').style.display = 'block';
+  document.getElementById('downloadLinks').style.display = 'block';
 }
 
 // Function to download a file
@@ -71,7 +71,7 @@ function showErrorMessage() {
   const errorMessage = document.getElementById('fetch-error');
   errorMessage.style.display = 'block';
   document.getElementById('input-container').style.display = 'block';
-  
+
   // Hide the loader animation
   hideLoadingAnimation();
 
@@ -91,7 +91,7 @@ function hideLoadingAnimation() {
 }
 
 // Add a click event listener to the download button
-downloadButton.addEventListener('click', function () {
+downloadButton.addEventListener('click', function() {
   const videoUrl = document.getElementById('videoUrl').value;
   const settings = {
     async: true,
@@ -107,7 +107,7 @@ downloadButton.addEventListener('click', function () {
   showLoadingAnimation();
 
   $.ajax(settings)
-    .done(function (response) {
+    .done(function(response) {
       if (response.success) {
         const downloadLinks = response.links;
         const downloadHDButton = document.getElementById('downloadHD');
@@ -125,12 +125,12 @@ downloadButton.addEventListener('click', function () {
         for (const link in downloadLinks) {
           if (link.includes('Low Quality')) {
             downloadSDButton.style.display = 'block';
-            downloadSDButton.addEventListener('click', function () {
+            downloadSDButton.addEventListener('click', function() {
               downloadFile(downloadLinks[link], 'video_sd.mp4');
             });
           } else if (link.includes('High Quality')) {
             downloadHDButton.style.display = 'block';
-            downloadHDButton.addEventListener('click', function () {
+            downloadHDButton.addEventListener('click', function() {
               downloadFile(downloadLinks[link], 'video_hd.mp4');
             });
           }
@@ -142,20 +142,20 @@ downloadButton.addEventListener('click', function () {
         showErrorMessage();
       }
     })
-    .fail(function () {
+    .fail(function() {
       showErrorMessage();
     });
 });
 
 // Add click event listeners for the download buttons
-document.getElementById('downloadHD').addEventListener('click', function () {
+document.getElementById('downloadHD').addEventListener('click', function() {
   const url = this.getAttribute('data-url');
   const extension = this.getAttribute('data-extension');
   const fileName = 'video_hd' + extension;
   downloadFile(url, fileName);
 });
 
-document.getElementById('downloadSD').addEventListener('click', function () {
+document.getElementById('downloadSD').addEventListener('click', function() {
   const url = this.getAttribute('data-url');
   const extension = this.getAttribute('data-extension');
   const fileName = 'video_sd' + extension;
