@@ -6,12 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Facebook video downloader</title>
   <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-KFC3DW4J');</script>
-<!-- End Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-KFC3DW4J');</script>
+  <!-- End Google Tag Manager -->
   <meta name="google-adsense-account" content="ca-pub-3227806848574176">
 
   <meta name="description"
@@ -332,8 +335,151 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       margin: 5px auto;
 
     }
-    .loader-container h1{
-      
+
+    .loader-container h1 {}
+
+    .sticky {
+      position: fixed;
+      position: -webkit-sticky;
+      position: -moz-sticky;
+      position: -o-sticky;
+      position: -ms-sticky;
+      position: sticky !important
+    }
+
+    #ad-sticky {
+      bottom: 0;
+      width: 100%;
+      left: 0;
+      text-align: center;
+      z-index: 50;
+      max-height: 52px;
+      text-align: center;
+      background-color: #fff;
+      box-shadow: 0 0 5px 0 rgba(0, 0, 0, .2) !important;
+      margin-bottom: 0 !important;
+      border: none;
+      transition: .4s ease-in-out;
+      padding-top: 2px
+    }
+
+    .ad-close {
+      position: absolute;
+      width: 28px;
+      height: 28px;
+      top: -28px;
+      right: 0;
+      background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='13' height='13' viewBox='341 8 13 13' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%234F4F4F' d='M354 9.31 352.69 8l-5.19 5.19L342.31 8 341 9.31l5.19 5.19-5.19 5.19 1.31 1.31 5.19-5.19 5.19 5.19 1.31-1.31-5.19-5.19z' fill-rule='evenodd'/%3E%3C/svg%3E");
+      background-size: 13px 13px;
+      background-position: 9px;
+      background-color: #fff;
+      background-repeat: no-repeat;
+      box-shadow: 0 -1px 1px 0 rgb(0 0 0 / 20%);
+      border: none;
+      border-radius: 12px 0 0 0
+    }
+
+    .ad-close:before {
+      position: absolute;
+      content: "";
+      top: -20px;
+      right: 0;
+      left: -20px;
+      bottom: 0
+    }
+
+    .at-expanding-share-button[data-position=bottom-right] {
+      bottom: 88px !important
+    }
+
+    .abutton.is-success.dl-app {
+      background-color: #48c78e
+    }
+  </style>
+  <style>
+    body.modal-open {
+      overflow: hidden
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 100;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: -webkit-fill-available;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, .4);
+      align-items: center;
+      justify-content: center
+    }
+
+    .modal-content {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      pointer-events: auto;
+      background-color: #fff;
+      background-clip: padding-box;
+      border: 1px solid rgba(0, 0, 0, .175);
+      border-radius: 0;
+      outline: 0;
+      -webkit-animation-name: animatetop;
+      -webkit-animation-duration: .4s;
+      animation-name: animatetop;
+      animation-duration: .4s;
+      padding-top: .5rem
+    }
+
+    @-webkit-keyframes animatetop {
+      from {
+        top: -300px;
+        opacity: 0
+      }
+
+      to {
+        top: 0;
+        opacity: 1
+      }
+    }
+
+    @keyframes animatetop {
+      from {
+        top: -300px;
+        opacity: 0
+      }
+
+      to {
+        top: 0;
+        opacity: 1
+      }
+    }
+
+    .modal-body {
+      padding: 2px 15px;
+      min-height: 250px
+    }
+
+    .modal-footer {
+      margin: 10px 0;
+      padding: 2px 15px
+    }
+
+    .btn.btn-secondary {
+      color: #fff;
+      background-color: #6c757d;
+      border: 1px solid #6c757d;
+      display: block;
+      width: 100%;
+      margin-bottom: 10px
+    }
+
+    @media (min-width:768px) {
+      .modal-content {
+        max-width: 1140px
+      }
     }
   </style>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3227806848574176"
@@ -349,10 +495,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </head>
 
 <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KFC3DW4J"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KFC3DW4J" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
       <!-- Logo on the Left Side -->
@@ -400,15 +546,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <h1 class="text-center my-5">Download & Save Facebook Video</h1>
       <div class="form">
         <div class="form" id="input-container">
-  <div class="input-container">
-    <input class="input input-url" type="text" id="videoUrl" placeholder="Paste Facebook video URL" required>
-    <div class="paste-div border-0">
-    <button type="button" class="btn btn-paste  close-button" onclick="pasteFromClipboard()">
-            </button>
-    </div>
-    <button class="button" id="downloadButton">Download</button>
-  </div>
-</div>
+          <div class="input-container">
+            <input class="input input-url" type="text" id="videoUrl" placeholder="Paste Facebook video URL" required>
+            <div class="paste-div border-0">
+              <button type="button" class="btn btn-paste  close-button" onclick="pasteFromClipboard()">
+              </button>
+            </div>
+            <button class="button" id="downloadButton">Download</button>
+          </div>
+        </div>
       </div>
 
       <div id="loader-wrapper" class="hidden">
@@ -468,9 +614,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </div>
   <div id="videoInfo" style="display: none;">
-  <img id="thumbnail" src="" alt="Video Thumbnail">
-  <h3 id="videoTitle"></h3>
-</div>
+    <img id="thumbnail" src="" alt="Video Thumbnail">
+    <h3 id="videoTitle"></h3>
+  </div>
   <div id="downloadLinks" class="buttons" style="display: none;">
     <div id="videoInfo" style="display: none;">
       <img id="thumbnail" src="" alt="Video Thumbnail">
@@ -599,37 +745,92 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </div>
 
-  <!-- Footer -->
+
+  <div id="dlModal" class="modal">
+
+    <div class="modal-content">
+
+      <div class="modal-body" id="ad-content"></div>
+
+      <div class="modal-footer">
+
+        <button class="btn btn-secondary" id="closeModalBtn">Close</button>
+
+      </div>
+
+    </div>
+
+  </div>
 
 
   <hr class="my-5">
   <div class="container footer">
-    <a href="/terms-of-use"> Terms & use</a>
+    <a href="#"> Terms & use</a>
     |
-    <a href="/privacy-policy"> Privacy policy</a>
+    <a href="#"> Privacy policy</a>
     |
-    <a href="/contact"> Contact</a>
+    <a href="#"> Privacy policy</a>
 
-    <p class="text-center">@2020 fdown.netlify.app</p>
+    <p class="text-center">@2020 eissaweb.com</p>
   </div>
-    <div id="dlModal" class="modal">
-    <div class="modal-content">
-      <div class="modal-body" id="ad-content"></div>
-      <div class="modal-footer">
-        <button class="btn btn-secondary" id="closeModalBtn">Close</button>
+  <script type="29ad0a92a377c88d0c4a5b0c-text/javascript">
+// Get the modal
+var modal = document.getElementById("dlModal");
+var btnClose = document.getElementById("closeModalBtn");
+
+function showAd() {
+  modal.style.display = "flex";
+  document.getElementById("dlModal").style.height = "-webkit-fill-available";
+  document.getElementById('ad-content').innerHTML = '<ins class="adsbygoogle" style="display:block; margin: 0 auto;" data-ad-client="ca-pub-1242426513429211" data-ad-slot="6334343369" data-ad-format="auto" data-full-width-responsive="true"></ins>';
+  (adsbygoogle = window.adsbygoogle || []).push({});
+  document.getElementsByTagName("BODY")[0].classList.add('modal-open');
+}
+
+btnClose.onclick = function () {
+  modal.style.display = "none";
+  document.getElementsByTagName("BODY")[0].classList.remove('modal-open');
+}
+
+window.onclick = function (event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+    document.getElementsByTagName("BODY")[0].classList.remove('modal-open');
+  }
+}
+  </script>
+
+  <div class="sticky" id="ad-sticky">
+
+    <div class="ad-slot" style="min-height:50px;overflow: hidden !important;margin: 0 auto">
+
+      <div class="snapcdn-ad" data-type="sticky">
+
+        <ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px"
+          data-ad-client="ca-pub-3227806848574176" data-ad-slot="3063566126"></ins>
+
+        <script type="29ad0a92a377c88d0c4a5b0c-text/javascript">
+
+        (adsbygoogle = window.adsbygoogle || []).push({});
+
+        </script>
+
       </div>
+
+      <div class="ad-close"
+        onclick="if (!window.__cfRLUnblockHandlers) return false; document.getElementById('ad-sticky').remove();sendEvent('click_ad_sticky_close')"
+        data-cf-modified-29ad0a92a377c88d0c4a5b0c-=""></div>
+
     </div>
+
   </div>
-  <script type="6d533cca5d6b6877ccf21b19-text/javascript">
+  <script>
+    const closeButton = document.querySelector('.ad-close');
 
-  function showAd(){document.getElementsByTagName("BODY")[0].classList.add("modal-open");modal.style.display="flex";document.getElementById("ad-content").innerHTML='
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-3227806848574176"
-     data-ad-slot="3063566126"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>';(adsbygoogle=window.adsbygoogle||[]).push({})}var modal=document.getElementById("dlModal"),btnClose=document.getElementById("closeModalBtn");btnClose.onclick=function(){modal.style.display="none";document.getElementsByTagName("BODY")[0].classList.remove("modal-open")};window.onclick=function(n){n.target==modal&&(modal.style.display="none",document.getElementsByTagName("BODY")[0].classList.remove("modal-open"))}
+    closeButton.addEventListener('click', function () {
+      const stickyAd = document.getElementById('ad-sticky');
 
+      stickyAd.style.display = 'none';
+    });
   </script>
   <script type="6d533cca5d6b6877ccf21b19-text/javascript">
 
@@ -654,7 +855,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 ]
 }
 
-  </script>    
+  </script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="j.js">
   </script>
