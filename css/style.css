@@ -130,7 +130,7 @@
         display: flex;
         justify-content: center;
         width: 100%;
-        
+
       }
 
       ::placeholder {
@@ -247,7 +247,7 @@
       border: none;
       padding: 8px;
       width: 100%;
-      background-color: rgba(72,199,143,255);
+      background-color: rgba(72, 199, 143, 255);
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       font-family: 'Inter', sens-sarif;
       font-weight: 500;
@@ -258,7 +258,7 @@
     }
 
     .another {
-      background-color: #0a0a0a;
+      background-color: #2d3e50;
       width: 100%;
       font-family: Inter;
       font-weight: 500;
