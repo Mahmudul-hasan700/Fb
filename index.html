@@ -481,6 +481,25 @@
         max-width: 1140px
       }
     }
+        #loader-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  display: none;
+  width: 100%;
+  height: 100%;
+  background:rgba(255,255,255,.8)
+  backdrop-filter: blur(10px);
+}
+
+#loader-wrapper span {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  top: 50%;
+  transform: translateY(-50%);
+}
   </style>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3227806848574176"
     crossorigin="anonymous"></script>
@@ -557,52 +576,83 @@
         </div>
       </div>
 
-      <div id="loader-wrapper" class="hidden">
+<div style="background:rgba(255,255,255,.8)" id="loader-wrapper" class="fixed top-0 left-0 z-50 hidden block w-full h-full bg-opacity-75 bg-white-700">
 
-        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-          style="margin:auto;display:block" width="100%" height="200px" viewbox="0 0 100 100"
-          preserveaspectratio="xMidYMid">
-
-          <g transform="translate(20 50)">
-
-            <circle cx="0" cy="0" r="6" fill="#1877F2">
-
-              <animatetransform attributename="transform" type="scale" begin="-0.375s" calcmode="spline"
-                keysplines="0.3 0 0.7 1;0.3 0 0.7 1" values="0;1;0" keytimes="0;0.5;1" dur="1s"
-                repeatcount="indefinite">
-              </animatetransform>
-            </circle>
-          </g>
-          <g transform="translate(40 50)">
-            <circle cx="0" cy="0" r="6" fill="#1877f2">
-              <animatetransform attributename="transform" type="scale" begin="-0.25s" calcmode="spline"
-                keysplines="0.3 0 0.7 1;0.3 0 0.7 1" values="0;1;0" keytimes="0;0.5;1" dur="1s"
-                repeatcount="indefinite">
-              </animatetransform>
-            </circle>
-          </g>
-          <g transform="translate(60 50)">
-            <circle cx="0" cy="0" r="6" fill="#1877F2">
-              <animatetransform attributename="transform" type="scale" begin="-0.125s" calcmode="spline"
-                keysplines="0.3 0 0.7 1;0.3 0 0.7 1" values="0;1;0" keytimes="0;0.5;1" dur="1s"
-                repeatcount="indefinite">
-              </animatetransform>
-            </circle>
-          </g>
-          <g transform="translate(80 50)">
-            <circle cx="0" cy="0" r="6" fill="#1877F2">
-              <animatetransform attributename="transform" type="scale" begin="0s" calcmode="spline"
-                keysplines="0.3 0 0.7 1;0.3 0 0.7 1" values="0;1;0" keytimes="0;0.5;1" dur="1s"
-                repeatcount="indefinite">
-              </animatetransform>
-            </circle>
-          </g>
-          <text x="50%" y="70%" style="font-size:7px" alignment-baseline="middle" text-anchor="middle"
-            fill="#155724">please wait a few seconds!
-          </text>
-        </svg>
-
-      </div>
+    <span class="relative flex justify-center top-1/2">
+  <svg width="135" height="60" viewBox="0 0 100 60">
+    <rect x="0" y="0" width="10" height="60" rx="6">
+      <animate attributeType="CSS" 
+               attributeName="height" 
+               values="60;20;60;"
+               begin='0s'
+               dur="1s"
+               repeatCount="indefinite" />
+      <animate attributeType="CSS" 
+               attributeName="y" 
+               begin='0s'
+               values="0;20;0;"
+               dur="1s"
+               repeatCount="indefinite" />
+    </rect>
+    <rect x="20" y="0" width="10" height="60" rx="6">
+      <animate attributeType="CSS" 
+               attributeName="height" 
+               values="60;20;60"
+               begin='0.2s'
+               dur="1s"
+               repeatCount="indefinite" />
+      <animate attributeType="CSS" 
+               attributeName="y" 
+               values="0;20;0"
+               begin='0.2s'
+               dur="1s"
+               repeatCount="indefinite" />
+    </rect>
+    <rect x="40" y="0" width="10" height="60" rx="6">
+      <animate attributeType="CSS" 
+               attributeName="height" 
+               values="60;20;60"
+               begin='0.4s'
+               dur="1s"
+               repeatCount="indefinite" />
+      <animate attributeType="CSS" 
+               attributeName="y" 
+               values="0;20;0"
+               begin='0.4s'
+               dur="1s"
+               repeatCount="indefinite" />
+    </rect>
+    <rect x="60" y="0" width="10" height="60" rx="6">
+      <animate attributeType="CSS" 
+               attributeName="height" 
+               values="60;20;60"
+               begin='0.6s'
+               dur="1s"
+               repeatCount="indefinite" />
+      <animate attributeType="CSS" 
+               attributeName="y" 
+               values="0;20;0"
+               begin='0.6s'
+               dur="1s"
+               repeatCount="indefinite" />
+    </rect>
+    <rect x="80" y="0" width="10" height="60" rx="6">
+      <animate attributeType="CSS" 
+               attributeName="height" 
+               values="60;20;60"
+               begin='0.8s'
+               dur="1s"
+               repeatCount="indefinite" />
+      <animate attributeType="CSS" 
+               attributeName="y" 
+               values="0;20;0"
+               begin='0.8s'
+               dur="1s"
+               repeatCount="indefinite" />
+    </rect>
+  </svg>
+  </span>
+</div>
       <div class="error-message hidden">
         <span>Error: Url is not supported, only Facebook.com and Fb.watch domains are supported</span>
       </div>
@@ -622,7 +672,7 @@
       <img id="thumbnail" src="" alt="Video Thumbnail">
       <h3 id="videoTitle"></h3>
     </div>
-    <button id="downloadHD" class="download-hd" style="display: none;"><i class='bx bxs-download'></i> Download
+    <button id="downloadHD" class="download-hd" style="display: none;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:white;transform: ;msFilter:;"><path d="M19 9h-4V3H9v6H5l7 8zM4 19h16v2H4z"></path></svg> Download
       HD</button>
 
     <button id="downloadSD" class="download-sd" style="display: none;"><i class='bx bxs-download'></i> Download

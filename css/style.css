@@ -230,27 +230,28 @@
     .download-hd {
       border: none;
       width: 100%;
-      padding: 8px;
+      padding: 10px;
       background-color: rgba(0, 99, 249, 255);
       box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-      font-family: Inter;
-      font-weight: 500;
+      font-family: 'Inter', sens-sarif;
+      font-weight: 600;
       margin: 10px 0;
       border-radius: 3px;
       text-align: center;
       color: #fff;
       font-size: 15px;
       position: relative;
+
     }
 
     .download-sd {
       border: none;
-      padding: 8px;
+      padding: 10px;
       width: 100%;
       background-color: rgba(72, 199, 143, 255);
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       font-family: 'Inter', sens-sarif;
-      font-weight: 500;
+      font-weight: 600;
       margin: 0;
       border-radius: 3px;
       color: #fff;
@@ -261,12 +262,12 @@
       background-color: #2d3e50;
       width: 100%;
       font-family: Inter;
-      font-weight: 500;
+      font-weight: 600;
       margin: 10px 0;
       border-radius: 3px;
       color: #fff;
       font-size: 15px;
-      padding: 8px;
+      padding: 10px;
       border: none;
       box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
     }
@@ -291,7 +292,6 @@
     .nav-links:hover,
     .nav-item:hover {
       background-color: rgb(230, 230, 230);
-      color: #fff !important;
     }
 
     .navbar-nav .nav-link {

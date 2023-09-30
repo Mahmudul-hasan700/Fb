@@ -150,67 +150,20 @@
     <h1 class="text-center my-5">Download & Save TikTok Video</h1>
     <div class="loader-container">
       <div class="input-container">
-        <form id="download-form" class="form" method="get" action="">
-          <input pattern="^http(s?)(:\/\/)([a-z]+\.)*tiktok\.com\/(.*)?\/(.*)?$" id="URL" name="url" type="text"
+        
+          <input pattern="^http(s?)(:\/\/)([a-z]+\.)*tiktok\.com\/(.*)?\/(.*)?$" name="url" id="videoUrl" type="text"
             class="input" placeholder="Paste TikTok link here" required="">
           <div class="paste-div border-0">
             <button type="button" class="btn btn-paste  close-button" onclick="pasteFromClipboard()">
             </button>
           </div>
-          <button type="submit" class="button" id="submit"><i class='bx bxs-download'></i> Download</button>
-        </form>
+          <button class="button" id="downloadBtn"><i class='bx bxs-download'></i> Download</button>
       </div>
 
-      <div id="loader-wrapper" class="hidden">
-
-        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-          style="margin:auto;display:block" width="100%" height="200px" viewbox="0 0 100 100"
-          preserveaspectratio="xMidYMid">
-
-          <g transform="translate(20 50)">
-
-            <circle cx="0" cy="0" r="6" fill="#00b887">
-
-              <animatetransform attributename="transform" type="scale" begin="-0.375s" calcmode="spline"
-                keysplines="0.3 0 0.7 1;0.3 0 0.7 1" values="0;1;0" keytimes="0;0.5;1" dur="1s"
-                repeatcount="indefinite"></animatetransform>
-            </circle>
-          </g>
-          <g transform="translate(40 50)">
-            <circle cx="0" cy="0" r="6" fill="#00b887">
-              <animatetransform attributename="transform" type="scale" begin="-0.25s" calcmode="spline"
-                keysplines="0.3 0 0.7 1;0.3 0 0.7 1" values="0;1;0" keytimes="0;0.5;1" dur="1s"
-                repeatcount="indefinite"></animatetransform>
-            </circle>
-          </g>
-          <g transform="translate(60 50)">
-            <circle cx="0" cy="0" r="6" fill="#00b887">
-              <animatetransform attributename="transform" type="scale" begin="-0.125s" calcmode="spline"
-                keysplines="0.3 0 0.7 1;0.3 0 0.7 1" values="0;1;0" keytimes="0;0.5;1" dur="1s"
-                repeatcount="indefinite"></animatetransform>
-            </circle>
-          </g>
-          <g transform="translate(80 50)">
-            <circle cx="0" cy="0" r="6" fill="#00b887">
-              <animatetransform attributename="transform" type="scale" begin="0s" calcmode="spline"
-                keysplines="0.3 0 0.7 1;0.3 0 0.7 1" values="0;1;0" keytimes="0;0.5;1" dur="1s"
-                repeatcount="indefinite">
-              </animatetransform>
-            </circle>
-          </g>
-          <text x="50%" y="70%" style="font-size:7px" alignment-baseline="middle" text-anchor="middle"
-            fill="#155724">please wait a few seconds!
-
-          </text>
-        </svg>
-
-      </div>
-
-
-      <div class="error-message hidden">
+      <div id="error" class="error-message hidden">
         <span>Please enter a valid TikTok video link.</span>
       </div>
-
+      
     </div>
   </div>
   </div>
@@ -271,8 +224,16 @@
       </div>
       <div id="overlay_loader" class="overlay hidden bg-neutral-100 dark:bg-neutral-800">
         <div class="overlay__inner">
-          <div class="overlay__content"><span
-              class="spinner dark:border-t-white dark:border-neutral-700 border-neutral-200 border-t-neutral-900"></span>
+          <div class="overlay__content">
+            <span
+              class="spinner dark:border-t-white dark:border-neutral-700 border-neutral-200 border-t-neutral-900"><svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
+  <circle cx="30" cy="50" r="15" fill="#EE1D52">
+    <animate attributeName="cx" values="30;70;30" dur="1.5s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="70" cy="50" r="15" fill="#55D398">
+    <animate attributeName="cx" values="70;30;70" dur="1.5s" repeatCount="indefinite" />
+  </circle>
+              </svg></span>
           </div>
         </div>
       </div>
