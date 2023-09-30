@@ -150,26 +150,24 @@
     <h1 class="text-center my-5">Download & Save TikTok Video</h1>
     <div class="loader-container">
       <div class="input-container">
-        
-          <input pattern="^http(s?)(:\/\/)([a-z]+\.)*tiktok\.com\/(.*)?\/(.*)?$" name="url" id="videoUrl" type="text"
-            class="input" placeholder="Paste TikTok link here" required="">
-          <div class="paste-div border-0">
-            <button type="button" class="btn btn-paste  close-button" onclick="pasteFromClipboard()">
-            </button>
-          </div>
-          <button class="button" id="downloadBtn"><i class='bx bxs-download'></i> Download</button>
+
+        <input pattern="^http(s?)(:\/\/)([a-z]+\.)*tiktok\.com\/(.*)?\/(.*)?$" name="url" id="videoUrl" type="text"
+          class="input" placeholder="Paste TikTok link here" required="">
+        <div class="paste-div border-0">
+          <button type="button" class="btn btn-paste  close-button">
+          </button>
+        </div>
+        <button class="button" id="downloadBtn"><i class='bx bxs-download'></i> Download</button>
       </div>
 
       <div id="error" class="error-message hidden">
         <span>Please enter a valid TikTok video link.</span>
       </div>
-      
+
     </div>
   </div>
-  </div>
-  </div>
   <div class="result">
-    <div id="container" class="hidden container">
+    <div id="container" class="hidden container mb-0 mt-0">
       <div id="video_container" class="image-tag hidden">
         <div class="thumbnail-container container">
           <img id="video_thumbnail" src="" alt="Video Thumbnail" class="thumbnail">
@@ -226,13 +224,14 @@
         <div class="overlay__inner">
           <div class="overlay__content">
             <span
-              class="spinner dark:border-t-white dark:border-neutral-700 border-neutral-200 border-t-neutral-900"><svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
-  <circle cx="30" cy="50" r="15" fill="#EE1D52">
-    <animate attributeName="cx" values="30;70;30" dur="1.5s" repeatCount="indefinite" />
-  </circle>
-  <circle cx="70" cy="50" r="15" fill="#55D398">
-    <animate attributeName="cx" values="70;30;70" dur="1.5s" repeatCount="indefinite" />
-  </circle>
+              class="spinner dark:border-t-white dark:border-neutral-700 border-neutral-200 border-t-neutral-900"><svg
+                xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
+                <circle cx="30" cy="50" r="15" fill="#EE1D52">
+                  <animate attributeName="cx" values="30;70;30" dur="1.5s" repeatCount="indefinite" />
+                </circle>
+                <circle cx="70" cy="50" r="15" fill="#55D398">
+                  <animate attributeName="cx" values="70;30;70" dur="1.5s" repeatCount="indefinite" />
+                </circle>
               </svg></span>
           </div>
         </div>
@@ -240,22 +239,8 @@
     </div>
   </div>
 
-  <div id="body-item" class="container full-site body-item my-5">
+  <div id="body-item" class="container full-site body-item mt-0 mb-0">
     <div class="fade-in">
-
-      <div class="ad-container">
-
-        <ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px"
-          data-ad-client="ca-pub-3227806848574176" data-ad-slot="3063566126"></ins>
-
-        <script>
-
-          (adsbygoogle = window.adsbygoogle || []).push({})
-
-        </script>
-
-      </div>
-
       <p class="mb-6 leading-7"><strong>FDown</strong> is one
 
         of the most popular TikTok video downloader tools that can
@@ -382,21 +367,9 @@
     </script>
 
   </div>
-  <script>
-    window.onload = function () {
-      // Get the URL without the query string
-      const cleanURL = window.location.href.split('?')[0];
-
-      // Update the URL without the query string
-      history.replaceState(null, null, cleanURL);
-    };
-  </script>
-
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="jquery.js">
-
-  </script>
+  <script src="jquery.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
     integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
     crossorigin="anonymous"></script>
